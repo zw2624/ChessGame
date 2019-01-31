@@ -1,6 +1,8 @@
 package Main;
 
 public class Board {
+
+
     private Cell[][] grid = new Cell[8][8];
 
     public Board() {
@@ -13,7 +15,19 @@ public class Board {
 
     }
 
-    public Cell[] getMoveAble(int player) {
+    public void setGrid(int player, int x, int y, Piece P) {
+        Cell cell = this.grid[x][y];
+        cell.setCurrent(P);
+        cell.setOwner(player);
+    }
+/*
+    public void setUp() {
+        Cell[][] grid = this.grid;
+        this.setGrid(1,0, 0, );
 
+    }
+*/
+    public Cell getCell(int x, int y) {
+        return grid[x][y];
     }
 }
