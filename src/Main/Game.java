@@ -13,7 +13,7 @@ public class Game {
         int player = this.turn % 2;
         Cell[] Moveable = this.myBoard;
         Cell selectedCell = selectCell(Moveable);
-        
+
         this.turn = this.turn + 1;
     }
 
