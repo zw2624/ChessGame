@@ -1,4 +1,4 @@
 package Main.Pieces;
 
-public class Queen {
+public class Pawn {
 }
