@@ -3,7 +3,7 @@ package Main;
 public class Cell {
     private int x, y;
     private int Owner;
-    private int Color; /* Color for shaded area showing possible moves*/
+    private int Shade; /* Color for shaded area showing possible moves*/
     private int isMoveable;
     private Piece Current;
 
@@ -11,7 +11,7 @@ public class Cell {
         this.x = x;
         this.y = y;
         Owner = 0;
-        Color = 0;
+        Shade = 0;
         Current = null;
     }
 
@@ -39,14 +39,6 @@ public class Cell {
         Owner = owner;
     }
 
-    public int getColor() {
-        return Color;
-    }
-
-    public void setColor(int color) {
-        Color = color;
-    }
-
     public Piece getCurrent() {
         return Current;
     }
@@ -54,4 +46,18 @@ public class Cell {
     public void setCurrent(Piece current) {
         Current = current;
     }
+
+    /*
+    check if this cell can get to (x, y)
+     */
+    public boolean canGetTo(Board grid, int x, int y) {
+        if (this.Owner == 0) {
+            return false;
+        } else {
+            return this.Current.checkMove(grid, this.x, this.y, x, y);
+        }
+    }
+
+
+
 }
