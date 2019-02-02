@@ -45,17 +45,24 @@ public class Cell {
 
     public void setCurrent(Piece current) {
         Current = current;
+        Owner = current.player;
     }
 
+    public void removePiece() {
+        Current = null;
+        Owner = 0;
+        Shade =0;
+    }
     /*
-    check if this cell can get to (x, y)
+    check if this cell can get to (x, y);
+    called only when there is a piece on current cell;
      */
     public boolean canGetTo(Board grid, int x, int y) {
         if (this.Owner == 0) {
             return false;
-        } else {
-            return this.Current.checkMove(grid, this.x, this.y, x, y);
         }
+        Boolean validMove = this.Current.checkMove(grid, this.x, this.y, x, y);
+        return validMove;
     }
 
 

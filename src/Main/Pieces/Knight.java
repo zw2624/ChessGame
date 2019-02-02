@@ -3,7 +3,13 @@ package Main.Pieces;
 import Main.Board;
 import Main.Piece;
 
+import java.awt.image.BufferedImage;
+
 public class Knight extends Piece {
+
+    public Knight(String name, int player, BufferedImage img) {
+        super(name, player, img);
+    }
 
     @Override
     public boolean checkMove(Board grid, int fromX, int fromY, int toX, int toY) {

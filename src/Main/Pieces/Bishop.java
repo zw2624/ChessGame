@@ -3,9 +3,12 @@ package Main.Pieces;
 import Main.Board;
 import Main.Piece;
 
+import java.awt.image.BufferedImage;
+
 public class Bishop extends Piece {
 
-    public Bishop() {
+    public Bishop(String name, int player, BufferedImage img) {
+        super(name, player, img);
     }
 
     @Override
