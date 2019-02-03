@@ -13,9 +13,8 @@ public class Board {
                 this.grid[i][j] = new Cell(i, j);
             }
         }
-
-
-
+        whiteKing = null;
+        blackKing = null;
     }
 
     public void setGrid(int player, int x, int y, Piece P) {
