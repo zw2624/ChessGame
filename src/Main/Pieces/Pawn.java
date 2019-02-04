@@ -2,13 +2,14 @@ package Main.Pieces;
 
 import Main.Board;
 import Main.Piece;
+import Main.Player;
 
 import java.awt.image.BufferedImage;
 
 public class Pawn extends Piece {
     private boolean isFirst;
 
-    public Pawn(String name, int player, BufferedImage img) {
+    public Pawn(String name, Player player, BufferedImage img) {
         super(name, player, img);
         this.isFirst = true;
     }

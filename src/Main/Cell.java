@@ -45,7 +45,7 @@ public class Cell {
 
     public void setCurrent(Piece current) {
         Current = current;
-        Owner = current.player;
+        Owner = current.player.getPlayerID();
     }
 
     public void removePiece() {

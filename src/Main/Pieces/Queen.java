@@ -2,12 +2,13 @@ package Main.Pieces;
 
 import Main.Board;
 import Main.Piece;
+import Main.Player;
 
 import java.awt.image.BufferedImage;
 
 public class Queen extends Piece {
 
-    public Queen(String name, int player, BufferedImage img) {
+    public Queen(String name, Player player, BufferedImage img) {
         super(name, player, img);
     }
 

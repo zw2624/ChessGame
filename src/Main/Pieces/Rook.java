@@ -2,12 +2,13 @@ package Main.Pieces;
 
 import Main.Board;
 import Main.Piece;
+import Main.Player;
 
 import java.awt.image.BufferedImage;
 
 public class Rook extends Piece {
 
-    public Rook(String name, int player, BufferedImage img) {
+    public Rook(String name, Player player, BufferedImage img) {
         super(name, player, img);
     }
 
