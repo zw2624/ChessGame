@@ -3,13 +3,17 @@ package Main;
 import java.awt.image.BufferedImage;
 
 public abstract class Piece {
-    String Name;
-    Player player;
+    public String Name;
+    public Player player;
+    public int x;
+    public int y;
     private BufferedImage img;
 
-    public Piece(String name, Player player, BufferedImage img) {
+    public Piece(String name, Player player,int x, int y, BufferedImage img) {
         Name = name;
         this.player = player;
+        this.x = x;
+        this.y = y;
         this.img = img;
         player.addPiece(this);
     }

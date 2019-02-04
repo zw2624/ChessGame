@@ -8,8 +8,8 @@ import java.awt.image.BufferedImage;
 
 public class Knight extends Piece {
 
-    public Knight(String name, Player player, BufferedImage img) {
-        super(name, player, img);
+    public Knight(String name, Player player, int x, int y, BufferedImage img) {
+        super(name, player, x, y, img);
     }
 
     @Override

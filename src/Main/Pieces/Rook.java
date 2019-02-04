@@ -8,8 +8,8 @@ import java.awt.image.BufferedImage;
 
 public class Rook extends Piece {
 
-    public Rook(String name, Player player, BufferedImage img) {
-        super(name, player, img);
+    public Rook(String name, Player player, int x, int y, BufferedImage img) {
+        super(name, player, x, y, img);
     }
 
     @Override

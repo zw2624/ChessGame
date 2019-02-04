@@ -8,8 +8,8 @@ import java.awt.image.BufferedImage;
 
 public class Bishop extends Piece {
 
-    public Bishop(String name, Player player, BufferedImage img) {
-        super(name, player, img);
+    public Bishop(String name, Player player, int x, int y, BufferedImage img) {
+        super(name, player, x, y, img);
     }
 
     @Override

@@ -3,12 +3,14 @@ package Main;
 import java.util.ArrayList;
 
 public class Player {
+    public boolean first;
     private int playerID;
     public boolean isCheckmate;
     public boolean isStalemate;
     private ArrayList<Piece> livePieces;
 
-    public Player(int ID) {
+    public Player(int ID, boolean isFirst) {
+        this.first = isFirst;
         this.playerID = ID;
         this.isCheckmate = false;
         this.isStalemate = false;

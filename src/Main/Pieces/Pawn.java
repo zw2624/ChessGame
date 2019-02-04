@@ -9,10 +9,11 @@ import java.awt.image.BufferedImage;
 public class Pawn extends Piece {
     private boolean isFirst;
 
-    public Pawn(String name, Player player, BufferedImage img) {
-        super(name, player, img);
+    public Pawn(String name, Player player, int x, int y, BufferedImage img) {
+        super(name, player, x, y, img);
         this.isFirst = true;
     }
+
 
     @Override
     public boolean checkMove(Board grid, int fromX, int fromY, int toX, int toY) {
