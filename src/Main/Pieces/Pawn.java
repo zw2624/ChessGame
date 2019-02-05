@@ -26,7 +26,7 @@ public class Pawn extends Piece {
     public boolean checkMove(Board grid, int fromX, int fromY, int toX, int toY) {
         boolean moved = (fromX != toX) || (fromY != toY);
         boolean isBlack = this.player.getPlayerID() == 1;
-        boolean hasEnemy = grid.getCell(toX, toY).getOwner() != grid.getCell(fromX, fromY).getOwner();
+        boolean hasEnemy = grid.getCell(toX, toY).getOwner() != grid.getCell(fromX, fromY).getOwner() & grid.getCell(toX, toY).getOwner() != 2;
         boolean isEmpty = grid.getCell(toX, toY).getOwner() == 2;
         boolean canEat;
         boolean isNext;
