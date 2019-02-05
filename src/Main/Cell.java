@@ -9,7 +9,7 @@ public class Cell {
     public Cell(int x, int y) {
         this.x = x;
         this.y = y;
-        Owner = 0;
+        Owner = 2;
         Shade = 0;
         Current = null;
     }
@@ -27,13 +27,15 @@ public class Cell {
     }
 
     public void setCurrent(Piece current) {
+        current.x = this.x;
+        current.y = this.y;
         Current = current;
         Owner = current.player.getPlayerID();
     }
 
     public void removePiece() {
         Current = null;
-        Owner = 0;
+        Owner = 2;
         Shade =0;
     }
     /*
@@ -41,7 +43,7 @@ public class Cell {
     called only when there is a piece on current cell;
      */
     public boolean canGetTo(Board grid, int x, int y) {
-        if (this.Owner == 0) {
+        if (this.Owner == 2) {
             return false;
         }
         Boolean validMove = this.Current.checkMove(grid, this.x, this.y, x, y);

@@ -10,6 +10,7 @@ public class Board {
     private Game g;
     private Cell[][] grid = new Cell[8][8];
     public int[][] kingsPos;
+    public Piece[] Kings;
 
     public Board(Game game) {
         this.g = game;
@@ -18,7 +19,7 @@ public class Board {
                 this.grid[i][j] = new Cell(i, j);
             }
         }
-        kingsPos = new int[][] {{3, 0},{3, 7}};
+        Kings = new Piece[2];
     }
 
     public void setup() {
@@ -64,30 +65,13 @@ public class Board {
             this.grid[i][6].setCurrent(blackPawn);
         }
 
-
+        Kings[0] = whiteKing;
+        Kings[1] = blackKing;
 
     }
 
     public Cell getCell(int x, int y) {
         return grid[x][y];
-    }
-
-    public boolean isWhiteKing(int x, int y) {
-        return x == kingsPos[0][0] & y == kingsPos[0][1];
-    }
-
-    public boolean isBlackKing(int x, int y) {
-        return x == kingsPos[1][0] & y == kingsPos[1][1];
-    }
-
-    public void setWhiteKing(int x, int y) {
-        kingsPos[0][0] = x;
-        kingsPos[0][1] = y;
-    }
-
-    public void setBlackKing(int x, int y) {
-        kingsPos[1][0] = x;
-        kingsPos[1][1] = y;
     }
 
     public Cell findPiece(String Name) {
@@ -102,11 +86,26 @@ public class Board {
         return null;
     }
 
-    public boolean movePiece(int fromX, int fromY, int toX, int toY) {
+    public boolean movePiece(Player p, int fromX, int fromY, int toX, int toY) {
         Cell from = this.getCell(fromX, fromY);
+        String description;
+        if (g.next != p.getPlayerID()) {
+            description = "Not your turn";
+            System.out.println(description);
+            return false;
+        }
+        if (p.getPlayerID() != from.getOwner()) {
+            description = "Not your pieces!";
+            System.out.println(description);
+            return false;
+        }
+        if (toX > 7 || toX < 0 || toY > 7 || toY <0) {
+            description = "Index out of bound";
+            System.out.println(description);
+            return false;
+        }
         Cell to = this.getCell(toX, toY);
         Piece curPiece = from.getCurrent();
-        String description;
         if (curPiece == null) {
             description = "No piece in the cell";
             System.out.println(description);
@@ -115,20 +114,20 @@ public class Board {
         if (from.canGetTo(this,toX, toY)) {
             boolean hasMine = to.getOwner() == from.getOwner();
             if (hasMine) {
-                description = "That cell has our piece!";
+                description = "That cell has your piece!";
                 System.out.println(description);
                 return false;
             } else {
-                if (isBlackKing(fromX, fromY)) {
-                    setBlackKing(toX, toY);
+                if (from.getCurrent() instanceof Pawn) {
+                    ((Pawn) from.getCurrent()).setFirst(false);
                 }
-                if (isWhiteKing(fromX, fromY)) {
-                    setWhiteKing(toX, toY);
-                }
+                description = "Move " + curPiece.Name + " to (" + toX + ", " + toY + ")";
+                g.getOpponent(p).removePiece(to.getCurrent());
                 to.removePiece();
                 to.setCurrent(curPiece);
                 from.removePiece();
-                description = "Move " + curPiece.Name + " to (" + toX + ", " + toY + ")";
+                g.next = g.getOpponent(p).getPlayerID();
+
                 System.out.println(description);
                 return true;
             }

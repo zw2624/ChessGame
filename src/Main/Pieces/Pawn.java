@@ -14,19 +14,39 @@ public class Pawn extends Piece {
         this.isFirst = true;
     }
 
+    public boolean isFirst() {
+        return isFirst;
+    }
+
+    public void setFirst(boolean first) {
+        isFirst = first;
+    }
 
     @Override
     public boolean checkMove(Board grid, int fromX, int fromY, int toX, int toY) {
         boolean moved = (fromX != toX) || (fromY != toY);
+        boolean isBlack = this.player.getPlayerID() == 1;
         boolean hasEnemy = grid.getCell(toX, toY).getOwner() != grid.getCell(fromX, fromY).getOwner();
-        boolean isEmpty = grid.getCell(toX, toY).getOwner() == 0;
-        boolean canEat = (Math.abs(fromX - toX) == 1) & (toY == fromY + 1) & hasEnemy;
+        boolean isEmpty = grid.getCell(toX, toY).getOwner() == 2;
+        boolean canEat;
         boolean isNext;
         if (isFirst) {
-            isNext = isEmpty & (fromX==toX) & ((toY == fromY + 1) || (toY == fromY + 2));
+            if (!isBlack) {
+                isNext = isEmpty & (fromX==toX) & ((toY == fromY + 1) || (toY == fromY + 2));
+                canEat = (Math.abs(fromX - toX) == 1) & (toY == fromY + 1) & hasEnemy;
+            } else {
+                isNext = isEmpty & (fromX==toX) & ((toY == fromY - 1) || (toY == fromY - 2));
+                canEat = (Math.abs(fromX - toX) == 1) & (toY == fromY - 1) & hasEnemy;
+            }
 
         } else {
-            isNext = isEmpty & (fromX==toX) & (toY == fromY + 1);
+            if (!isBlack) {
+                isNext = isEmpty & (fromX==toX) & (toY == fromY + 1);
+                canEat = (Math.abs(fromX - toX) == 1) & (toY == fromY + 1) & hasEnemy;
+            } else  {
+                isNext = isEmpty & (fromX==toX) & (toY == fromY - 1);
+                canEat = (Math.abs(fromX - toX) == 1) & (toY == fromY - 1) & hasEnemy;
+            }
         }
         return moved & (isNext || canEat);
     }

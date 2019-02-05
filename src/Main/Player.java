@@ -22,6 +22,10 @@ public class Player {
         return playerID;
     }
 
+    public void removePiece(Piece e) {
+        livePieces.remove(e);
+    }
+
     public void addPiece(Piece e) {
         livePieces.add(e);
     }

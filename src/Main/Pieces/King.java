@@ -14,6 +14,11 @@ public class King extends Piece {
 
     @Override
     public boolean checkMove(Board grid, int fromX, int fromY, int toX, int toY) {
-        return false;
+        //System.out.println("Checking King");
+        boolean oneStep = (Math.abs(fromX - toX) < 2) & (Math.abs(fromY-toY) < 2);
+        Player me = this.player;
+        int[] other = {grid.Kings[me.getPlayerID()].x, grid.Kings[me.getPlayerID()].y};
+        boolean noOtherKing = (Math.abs(other[0] - toX) < 2) & (Math.abs(other[1]-toY) < 2);
+        return oneStep & noOtherKing;
     }
 }
