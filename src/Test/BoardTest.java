@@ -12,6 +12,12 @@ import static org.junit.jupiter.api.Assertions.*;
 class BoardTest {
 
     /**
+     * Test about who's turn to move is in Game test.
+     */
+
+
+
+    /**
      * Test board setup
      */
     @Test

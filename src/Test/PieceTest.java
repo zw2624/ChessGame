@@ -9,7 +9,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class PieceTest {
 
-    /* Piece Test does not test:
+    /**
+     * Piece Test does not test:
         1. the spot is not empty
         2. out of boundary
        These test are included and tested in board logic.

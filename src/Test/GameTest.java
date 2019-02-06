@@ -15,6 +15,9 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class GameTest {
 
+    /**
+     * Test constructor. checking if it initialized two players
+     */
     @Test
     void testConstructor() {
         Game g = new Game();
@@ -23,6 +26,9 @@ class GameTest {
         assertEquals(g.black.getPieces().size(), 0);
     }
 
+    /**
+     * Test if we can get opponent player
+     */
     @Test
     void testGetOpponent() {
         Game g = new Game();
@@ -31,6 +37,9 @@ class GameTest {
     }
 
 
+    /**
+     * Test about inCheck. Check if still incheck after we actually solved the threat.
+     */
     @Test
     void testInCheck() {
         Game g = new Game();
@@ -56,8 +65,8 @@ class GameTest {
     }
 
 
-    /*
-    Test if tryMove function undo the move after checking.
+    /**
+     * Test if tryMove function undo the move after checking.
      */
     @Test
     void testTryMove() {
@@ -83,10 +92,9 @@ class GameTest {
 
     }
 
-
-
-
-
+    /**
+     * Test Checkmate
+     */
     @Test
     void testCheckmate() {
         Game g = new Game();
@@ -105,6 +113,9 @@ class GameTest {
         assertTrue(Checkmate);
     }
 
+    /**
+     * Test when actually there is not checkmate
+     */
     @Test
     void testNotCheckmate() {
         Game g = new Game();
@@ -126,8 +137,9 @@ class GameTest {
     }
 
 
-
-
+    /**
+     * Test Stalemate
+     */
     @Test
     void testStalemate() {
         Game g = new Game();
@@ -145,14 +157,11 @@ class GameTest {
         assertTrue(stalemate);
     }
 
-    @Test
-    void testNotStalemate() {}
-
-
 
     /**
-     *  Test: if the 'move', 'check' work correctly together. Also checked if
-     *     This is an example from Wiki
+     *  Test: if the 'move', 'check' work correctly together.
+     *  Also checked if it is right player's turn to move.
+     *  This is an example from Wiki:
      *     Stamma's mate
      *     White moves to win
      *     1. Nb4+ Ka1
