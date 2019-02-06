@@ -89,8 +89,14 @@ public class Board {
     public boolean movePiece(Player p, int fromX, int fromY, int toX, int toY) {
         Cell from = this.getCell(fromX, fromY);
         String description;
+        /*
         if (g.next != p.getPlayerID()) {
             description = "Not your turn";
+            System.out.println(description);
+            return false;
+        }*/
+        if (from.getOwner() == 2) {
+            description = "No piece in the cell";
             System.out.println(description);
             return false;
         }
@@ -106,11 +112,6 @@ public class Board {
         }
         Cell to = this.getCell(toX, toY);
         Piece curPiece = from.getCurrent();
-        if (curPiece == null) {
-            description = "No piece in the cell";
-            System.out.println(description);
-            return false;
-        }
         if (from.canGetTo(this,toX, toY)) {
             boolean hasMine = to.getOwner() == from.getOwner();
             if (hasMine) {
