@@ -6,6 +6,11 @@ public class Cell {
     private int Shade; /* Color for shaded area showing possible moves*/
     private Piece Current;
 
+    /**
+     * constructor of Cell Object
+     * @param x the horizontal coordinate value
+     * @param y the vertical coordinate value
+     */
     public Cell(int x, int y) {
         this.x = x;
         this.y = y;
@@ -14,18 +19,34 @@ public class Cell {
         Current = null;
     }
 
+    /**
+     * Get the owner of the cell
+     * @return the PlayerID or 2 (stands for no owner)
+     */
     public int getOwner() {
         return Owner;
     }
 
+    /**
+     * Set the owner of the cell
+     * @param owner
+     */
     public void setOwner(int owner) {
         Owner = owner;
     }
 
+    /**
+     * Get Piece currently in the Cell
+     * @return Piece Object in the Cell
+     */
     public Piece getCurrent() {
         return Current;
     }
 
+
+    /**
+     * Put Piece in the Cell
+     */
     public void setCurrent(Piece current) {
         current.x = this.x;
         current.y = this.y;
@@ -33,14 +54,22 @@ public class Cell {
         Owner = current.player.getPlayerID();
     }
 
+    /**
+     * Empty the Cell
+     */
     public void removePiece() {
         Current = null;
         Owner = 2;
         Shade =0;
     }
-    /*
-    check if this cell can get to (x, y);
-    called only when there is a piece on current cell;
+
+    /**
+     * Check if the piece in a cell can get to another cell (x, y)
+     * Called only when there is a piece on current cell
+     * @param grid the board of the cell
+     * @param x int x of the target cell
+     * @param y int y of the target cell
+     * @return a boolean if that's a valid move
      */
     public boolean canGetTo(Board grid, int x, int y) {
         if (this.Owner == 2) {

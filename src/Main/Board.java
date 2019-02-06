@@ -12,6 +12,10 @@ public class Board {
     public int[][] kingsPos;
     public Piece[] Kings;
 
+    /**
+     * Constructor of Board Object
+     * @param game
+     */
     public Board(Game game) {
         this.g = game;
         for (int i = 0; i < 8; i ++) {
@@ -22,6 +26,9 @@ public class Board {
         Kings = new Piece[2];
     }
 
+    /**
+     * Set up the board with normal start.
+     */
     public void setup() {
         Piece whiteLeftRook = new Rook("White Rook", g.white, 0,0, null);
         Piece whiteRightRook = new Rook("White Rook", g.white, 7,0, null);
@@ -70,22 +77,27 @@ public class Board {
 
     }
 
+
+    /**
+     * get a cell on board
+     * @param x int x of wanted Cell
+     * @param y int y of wanted Cell
+     * @return Corresponding Cell Object
+     */
     public Cell getCell(int x, int y) {
         return grid[x][y];
     }
 
-    public Cell findPiece(String Name) {
-        for (int i = 0; i < 8; i ++) {
-            for (int j = 0; j < 8; j++) {
-                if (grid[i][j].getCurrent().Name == Name) {
-                    return grid[i][j];
-                }
-            }
-        }
-        System.out.println("There is no " + Name + " on the board.");
-        return null;
-    }
 
+    /**
+     * move piece on board
+     * @param p the player moving the piece
+     * @param fromX int x of selected cell
+     * @param fromY int y of selected cell
+     * @param toX int x of target cell
+     * @param toY int y of target cell
+     * @return a boolean if the move is made.
+     */
     public boolean movePiece(Player p, int fromX, int fromY, int toX, int toY) {
         Cell from = this.getCell(fromX, fromY);
         String description;

@@ -18,6 +18,15 @@ public abstract class Piece {
         player.addPiece(this);
     }
 
+    /**
+     * Checking if this is a valid move for the Piece
+     * @param grid the board the Piece is in
+     * @param fromX int x of starting position
+     * @param fromY int y of starting position
+     * @param toX int x of target position
+     * @param toY int y of target position
+     * @return a boolean if it is a valid move
+     */
     public abstract boolean checkMove(Board grid, int fromX, int fromY, int toX, int toY);
 
     /*
