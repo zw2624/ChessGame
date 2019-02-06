@@ -149,16 +149,18 @@ class GameTest {
     void testNotStalemate() {}
 
 
-    /*
-    Classic Checkmate Example
-    Stamma's mate
-    White moves to win
-    1. Nb4+ Ka1
-    2. Kc1 a2
-    3. Nc2#
+
+    /**
+     *  Test: if the 'move', 'check' work correctly together. Also checked if
+     *     This is an example from Wiki
+     *     Stamma's mate
+     *     White moves to win
+     *     1. Nb4+ Ka1
+     *     2. Kc1 a2
+     *     3. Nc2#
      */
     @Test
-    void ExtraCreditTest() {
+    void GameSimulation() {
         Game g = new Game();
         Piece blackKing = new King("Black King", g.black, 0, 1, null);
         Piece whiteKing = new King("White King", g.white, 2, 1, null);
@@ -177,6 +179,10 @@ class GameTest {
         ArrayList<Piece> ps = g.inCheck(g.black);
         assertNotEquals(0, ps.size());
         assertNotEquals(true, g.isCheckmate(g.black, ps));
+
+        System.out.println("White:");
+        boolean canMakeMoveAgain = g.myBoard.movePiece(g.white, 3,2,1,3);
+        assertFalse(canMakeMoveAgain);
 
         System.out.println("Black:");
         g.myBoard.movePiece(g.black, 0,1,0,0);

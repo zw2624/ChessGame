@@ -11,6 +11,9 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class BoardTest {
 
+    /**
+     * Test board setup
+     */
     @Test
     void testSetup() {
         Game g = new Game();
@@ -42,9 +45,11 @@ class BoardTest {
 
     }
 
+    /**
+     * Test when we select an empty cell when moving
+     */
     @Test
     void testMoveNothing() {
-        System.out.println("Test: selected place is empty");
         Game g = new Game();
         Board board = g.myBoard;
         Boolean success = board.movePiece(g.white, 3, 1,2,3 );
@@ -54,9 +59,11 @@ class BoardTest {
     }
 
 
+    /**
+     * Test when we select our opponent's piece
+     */
     @Test
     void testMoveOthers() {
-        System.out.println("Test: move other's piece");
         Game g = new Game();
         Board board = g.myBoard;
         Piece blackPawn = new Pawn("Black Pawn", g.black, 2, 3, null);
@@ -68,9 +75,11 @@ class BoardTest {
 
     }
 
+    /**
+     * Test when we move a piece to an empty spot
+     */
     @Test
     void testMoveToEmpty() {
-        System.out.println("Test: just move to an empty spot");
         Game g = new Game();
         Board board = g.myBoard;
         Piece whiteKnight = new Knight("White Knight", g.white, 3, 1, null);
@@ -85,9 +94,11 @@ class BoardTest {
         assertTrue(board.getCell(3,1).getOwner() == 2);
     }
 
+    /**
+     * Test when we try to move a piece outside the board
+     */
     @Test
     void testMoveOutside() {
-        System.out.println("Test: position not in board");
         Game g = new Game();
         Board board = g.myBoard;
         Piece whiteKnight = new Knight("White Knight", g.white, 3, 1, null);
@@ -100,9 +111,11 @@ class BoardTest {
         assertTrue(board.getCell(3,1).getOwner() == g.white.getPlayerID());
     }
 
+    /**
+     * Test when we aren't following the rule of the piece
+     */
     @Test
     void testMoveInvalid() {
-        System.out.println("Test: not a valid move");
         Game g = new Game();
         Board board = g.myBoard;
         Piece whiteKnight = new Knight("White Knight", g.white, 3, 1, null);
@@ -114,6 +127,9 @@ class BoardTest {
         assertTrue(board.getCell(3,1).getOwner() == g.white.getPlayerID());
     }
 
+    /**
+     * Test when we move the piece to a cell already has our piece
+     */
     @Test
     void testMoveOccupied() {
         System.out.println("Test: position already has mine");
@@ -133,7 +149,9 @@ class BoardTest {
     }
 
 
-
+    /**
+     * Test when we move the piece to eat enemey
+     */
     @Test
     void testMoveToKill() {
         System.out.println("Test: position has enemy");

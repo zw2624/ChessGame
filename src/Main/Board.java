@@ -101,12 +101,12 @@ public class Board {
     public boolean movePiece(Player p, int fromX, int fromY, int toX, int toY) {
         Cell from = this.getCell(fromX, fromY);
         String description;
-        /*
+
         if (g.next != p.getPlayerID()) {
             description = "Not your turn";
             System.out.println(description);
             return false;
-        }*/
+        }
         if (from.getOwner() == 2) {
             description = "No piece in the cell";
             System.out.println(description);
@@ -134,6 +134,11 @@ public class Board {
                 if (from.getCurrent() instanceof Pawn) {
                     ((Pawn) from.getCurrent()).setFirst(false);
                 }
+                if (from.getCurrent() instanceof King) {
+
+                }
+
+
                 description = "Move " + curPiece.Name + " to (" + toX + ", " + toY + ")";
                 g.getOpponent(p).removePiece(to.getCurrent());
                 to.removePiece();
