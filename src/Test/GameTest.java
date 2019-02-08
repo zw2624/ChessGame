@@ -1,12 +1,12 @@
 package Test;
 
-import Main.Board;
-import Main.Game;
-import Main.Piece;
-import Main.Pieces.King;
-import Main.Pieces.Knight;
-import Main.Pieces.Pawn;
-import Main.Pieces.Rook;
+import model.Board;
+import model.Game;
+import model.Piece;
+import model.Pieces.King;
+import model.Pieces.Knight;
+import model.Pieces.Pawn;
+import model.Pieces.Rook;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;

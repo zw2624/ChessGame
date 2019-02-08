@@ -1,9 +1,9 @@
 package Test;
 
-import Main.Cell;
-import Main.Piece;
-import Main.Pieces.Queen;
-import Main.Player;
+import model.Cell;
+import model.Piece;
+import model.Pieces.Queen;
+import model.Player;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

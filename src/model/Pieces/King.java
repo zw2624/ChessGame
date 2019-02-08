@@ -1,8 +1,8 @@
-package Main.Pieces;
+package model.Pieces;
 
-import Main.Board;
-import Main.Piece;
-import Main.Player;
+import model.Board;
+import model.Piece;
+import model.Player;
 
 import java.awt.image.BufferedImage;
 

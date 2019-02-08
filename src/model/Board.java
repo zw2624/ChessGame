@@ -1,8 +1,6 @@
-package Main;
+package model;
 
-import Main.Pieces.*;
-
-import java.util.List;
+import model.Pieces.*;
 
 public class Board {
 

@@ -1,10 +1,9 @@
 package Test;
 
-import Main.Board;
-import Main.Game;
-import Main.Piece;
-import Main.Pieces.*;
-import Main.Player;
+import model.Board;
+import model.Game;
+import model.Piece;
+import model.Pieces.*;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
