@@ -8,10 +8,9 @@ import java.awt.image.BufferedImage;
 
 public class King extends Piece {
 
-    public King(String name, Player player, int x, int y, BufferedImage img) {
-        super(name, player, x, y, img);
+    public King(String name, Player player, int x, int y) {
+        super(name, player, x, y);
     }
-
 
     @Override
     public boolean checkMove(Board grid, int fromX, int fromY, int toX, int toY) {

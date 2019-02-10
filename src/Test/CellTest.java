@@ -23,7 +23,7 @@ class CellTest {
         assertTrue(c.getCurrent()==null);
 
         Player p = new Player(0, true);
-        Piece whiteQueen = new Queen("Queen", p, 0,0,null);
+        Piece whiteQueen = new Queen("Queen", p, 0,0);
         c.setCurrent(whiteQueen);
         assertTrue(c.getOwner() == whiteQueen.player.getPlayerID());
         assertTrue(c.getCurrent()==whiteQueen);

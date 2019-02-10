@@ -1,6 +1,9 @@
 package model;
 
+import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 
 public abstract class Piece {
     public String Name;
@@ -9,13 +12,26 @@ public abstract class Piece {
     public int y;
     private BufferedImage img;
 
-    public Piece(String name, Player player,int x, int y, BufferedImage img) {
+    public Piece(String name, Player player,int x, int y) {
         Name = name;
         this.player = player;
         this.x = x;
         this.y = y;
-        this.img = img;
+        String path = "imgs/" + name + ".png";
+        try {
+            img = ImageIO.read(getClass().getResource(path));
+        } catch (IOException e) {
+            img = null;
+        }
         player.addPiece(this);
+    }
+
+    public void setImg(BufferedImage i) {
+        this.img = i;
+    }
+
+    public BufferedImage getImg() {
+        return img;
     }
 
     /**

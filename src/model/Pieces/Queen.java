@@ -8,8 +8,8 @@ import java.awt.image.BufferedImage;
 
 public class Queen extends Piece {
 
-    public Queen(String name, Player player, int x, int y, BufferedImage img) {
-        super(name, player, x, y, img);
+    public Queen(String name, Player player, int x, int y) {
+        super(name, player, x, y);
     }
 
     @Override

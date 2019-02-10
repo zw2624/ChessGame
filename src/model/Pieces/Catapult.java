@@ -8,8 +8,8 @@ import java.awt.image.BufferedImage;
 
 public class Catapult extends Piece {
 
-    public Catapult(String name, Player player, int x, int y, BufferedImage img) {
-        super(name, player, x, y, img);
+    public Catapult(String name, Player player, int x, int y) {
+        super(name, player, x, y);
     }
 
     @Override

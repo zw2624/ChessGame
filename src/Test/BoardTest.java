@@ -71,7 +71,7 @@ class BoardTest {
     void testMoveOthers() {
         Game g = new Game();
         Board board = g.myBoard;
-        Piece blackPawn = new Pawn("Black Pawn", g.black, 2, 3, null);
+        Piece blackPawn = new Pawn("Black Pawn", g.black, 2, 3);
         board.getCell(2,3).setCurrent(blackPawn);
         Boolean success = board.movePiece(g.white, 2, 3,2,2 );
         assertFalse(success);
@@ -87,7 +87,7 @@ class BoardTest {
     void testMoveToEmpty() {
         Game g = new Game();
         Board board = g.myBoard;
-        Piece whiteKnight = new Knight("White Knight", g.white, 3, 1, null);
+        Piece whiteKnight = new Knight("White Knight", g.white, 3, 1);
         board.getCell(3,1).setCurrent(whiteKnight);
 
         Boolean success = board.movePiece(g.white, 3, 1,2,3 );
@@ -106,7 +106,7 @@ class BoardTest {
     void testMoveOutside() {
         Game g = new Game();
         Board board = g.myBoard;
-        Piece whiteKnight = new Knight("White Knight", g.white, 3, 1, null);
+        Piece whiteKnight = new Knight("White Knight", g.white, 3, 1);
         board.getCell(3,1).setCurrent(whiteKnight);
 
         Boolean success = board.movePiece(g.white, 3, 1,4,-1 );
@@ -123,7 +123,7 @@ class BoardTest {
     void testMoveInvalid() {
         Game g = new Game();
         Board board = g.myBoard;
-        Piece whiteKnight = new Knight("White Knight", g.white, 3, 1, null);
+        Piece whiteKnight = new Knight("White Knight", g.white, 3, 1);
         board.getCell(3,1).setCurrent(whiteKnight);
 
         Boolean success = board.movePiece(g.white, 3, 1,2,4 );
@@ -140,8 +140,8 @@ class BoardTest {
         System.out.println("Test: position already has mine");
         Game g = new Game();
         Board board = g.myBoard;
-        Piece whiteKnight = new Knight("White Knight", g.white, 3, 1, null);
-        Piece whitePawn = new Pawn("White Pawn", g.white, 2, 3, null);
+        Piece whiteKnight = new Knight("White Knight", g.white, 3, 1);
+        Piece whitePawn = new Pawn("White Pawn", g.white, 2, 3);
         board.getCell(3,1).setCurrent(whiteKnight);
         board.getCell(2,3).setCurrent(whitePawn);
 
@@ -162,8 +162,8 @@ class BoardTest {
         System.out.println("Test: position has enemy");
         Game g = new Game();
         Board board = g.myBoard;
-        Piece whiteKnight = new Knight("White Knight", g.white, 3, 1, null);
-        Piece blackPawn = new Pawn("Black Pawn", g.black, 2, 3, null);
+        Piece whiteKnight = new Knight("White Knight", g.white, 3, 1);
+        Piece blackPawn = new Pawn("Black Pawn", g.black, 2, 3);
         board.getCell(3,1).setCurrent(whiteKnight);
         board.getCell(2,3).setCurrent(blackPawn);
 

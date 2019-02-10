@@ -19,8 +19,8 @@ class PieceTest {
     @Test
     void testKing() {
         Game g = new Game();
-        Piece blackKing = new King("Black King", g.black, 3, 3, null);
-        Piece whiteKing = new King("White King", g.white, 5, 3, null);
+        Piece blackKing = new King("Black King", g.black, 3, 3);
+        Piece whiteKing = new King("White King", g.white, 5, 3);
         g.myBoard.Kings[0] = whiteKing;
         g.myBoard.Kings[1] = blackKing;
         g.myBoard.getCell(3,3).setCurrent(blackKing);
@@ -42,7 +42,7 @@ class PieceTest {
     @Test
     void testKnight() {
         Game g = new Game();
-        Piece blackKnight = new Knight("Black Knight", g.black, 3,3,null);
+        Piece blackKnight = new Knight("Black Knight", g.black, 3,3);
         g.myBoard.getCell(3,3).setCurrent(blackKnight);
 
         // legal moves
@@ -64,7 +64,7 @@ class PieceTest {
     @Test
     void testPawn() {
         Game g = new Game();
-        Piece whitePawn = new Pawn("White Pawn", g.white, 5,1, null);
+        Piece whitePawn = new Pawn("White Pawn", g.white, 5,1);
         g.myBoard.getCell(5,1).setCurrent(whitePawn);
 
         // first moves
@@ -79,20 +79,20 @@ class PieceTest {
         assertFalse(whitePawn.checkMove(g.myBoard, 5, 1,  5, 0));
 
         // illegal moves (can't move even has enemy ahead)
-        Piece blackPawn0 = new Pawn("Black Pawn", g.black, 5,2, null);
+        Piece blackPawn0 = new Pawn("Black Pawn", g.black, 5,2);
         g.myBoard.getCell(5,2).setCurrent(blackPawn0);
         assertFalse(whitePawn.checkMove(g.myBoard, 5, 1,  5, 2));
 
         // Pawns en passant
-        Piece blackPawn1 = new Pawn("Black Pawn", g.black, 4,2, null);
-        Piece blackPawn2 = new Pawn("Black Pawn", g.black, 6,2, null);
+        Piece blackPawn1 = new Pawn("Black Pawn", g.black, 4,2);
+        Piece blackPawn2 = new Pawn("Black Pawn", g.black, 6,2);
         g.myBoard.getCell(4,2).setCurrent(blackPawn1);
         g.myBoard.getCell(6,2).setCurrent(blackPawn2);
         assertTrue(whitePawn.checkMove(g.myBoard, 5, 1,  4, 2));
         assertTrue(whitePawn.checkMove(g.myBoard, 5, 1,  6, 2));
 
         // Cannot go two cell after first move
-        Piece whitePawn2 = new Pawn("White Pawn", g.white, 0,1, null);
+        Piece whitePawn2 = new Pawn("White Pawn", g.white, 0,1);
         g.myBoard.getCell(0,1).setCurrent(whitePawn2);
         g.myBoard.movePiece(g.white, 0,1,0,2);
         assertTrue(whitePawn.checkMove(g.myBoard, 0, 1,  0, 3));
@@ -103,7 +103,7 @@ class PieceTest {
     @Test
     void testRook() {
         Game g = new Game();
-        Piece blackRook = new Rook("Black Rook", g.black, 3,3,null);
+        Piece blackRook = new Rook("Black Rook", g.black, 3,3);
         g.myBoard.getCell(3,3).setCurrent(blackRook);
 
         // legal moves
@@ -139,7 +139,7 @@ class PieceTest {
     @Test
     void testBishop() {
         Game g = new Game();
-        Piece blackBishop = new Bishop("Black Bishop", g.black, 3,3,null);
+        Piece blackBishop = new Bishop("Black Bishop", g.black, 3,3);
         g.myBoard.getCell(3,3).setCurrent(blackBishop);
 
 
@@ -174,7 +174,7 @@ class PieceTest {
     @Test
     void testQueen() {
         Game g = new Game();
-        Piece blackQueen = new Queen("Black Queen", g.black, 3,3,null);
+        Piece blackQueen = new Queen("Black Queen", g.black, 3,3);
         g.myBoard.getCell(3,3).setCurrent(blackQueen);
 
 

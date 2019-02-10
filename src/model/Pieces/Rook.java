@@ -4,12 +4,16 @@ import model.Board;
 import model.Piece;
 import model.Player;
 
+import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 
 public class Rook extends Piece {
 
-    public Rook(String name, Player player, int x, int y, BufferedImage img) {
-        super(name, player, x, y, img);
+
+    public Rook(String name, Player player, int x, int y) {
+        super(name, player, x, y);
     }
 
     @Override

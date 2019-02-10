@@ -44,10 +44,10 @@ class GameTest {
     void testInCheck() {
         Game g = new Game();
         Board board = g.myBoard;
-        Piece whiteKnight = new Knight("White Knight", g.white, 3, 2, null);
-        Piece whiteKing = new King("White King", g.white, 2,2, null);
-        Piece blackKing = new King("White Knight", g.black, 0, 0, null);
-        Piece blackPawn = new Pawn("Black Pawn", g.black, 1, 3, null);
+        Piece whiteKnight = new Knight("White Knight", g.white, 3, 2);
+        Piece whiteKing = new King("White King", g.white, 2,2);
+        Piece blackKing = new King("White Knight", g.black, 0, 0);
+        Piece blackPawn = new Pawn("Black Pawn", g.black, 1, 3);
         board.getCell(0,0).setCurrent(blackKing);
         board.getCell(2,2).setCurrent(whiteKing);
         board.getCell(3,2).setCurrent(whiteKnight);
@@ -72,10 +72,10 @@ class GameTest {
     void testTryMove() {
         Game g = new Game();
         Board board = g.myBoard;
-        Piece whiteKnight = new Knight("White Knight", g.white, 3, 1, null);
-        Piece whiteKing = new King("White King", g.white, 2,2, null);
-        Piece blackKing = new King("White Knight", g.black, 0, 0, null);
-        Piece blackPawn = new Pawn("Black Pawn", g.black, 2, 3, null);
+        Piece whiteKnight = new Knight("White Knight", g.white, 3, 1);
+        Piece whiteKing = new King("White King", g.white, 2,2);
+        Piece blackKing = new King("White Knight", g.black, 0, 0);
+        Piece blackPawn = new Pawn("Black Pawn", g.black, 2, 3);
         board.getCell(0,0).setCurrent(blackKing);
         board.getCell(2,2).setCurrent(whiteKing);
         board.getCell(3,1).setCurrent(whiteKnight);
@@ -99,9 +99,9 @@ class GameTest {
     void testCheckmate() {
         Game g = new Game();
         Board board = g.myBoard;
-        Piece whiteRook = new Rook("White Rook", g.white, 7, 7, null);
-        Piece whiteKing = new King("White King", g.white, 3,5, null);
-        Piece blackKing = new King("White Knight", g.black, 3, 7, null);
+        Piece whiteRook = new Rook("White Rook", g.white, 7, 7);
+        Piece whiteKing = new King("White King", g.white, 3,5);
+        Piece blackKing = new King("White Knight", g.black, 3, 7);
         board.getCell(3,7).setCurrent(blackKing);
         board.getCell(3,5).setCurrent(whiteKing);
         board.getCell(7,7).setCurrent(whiteRook);
@@ -120,10 +120,10 @@ class GameTest {
     void testNotCheckmate() {
         Game g = new Game();
         Board board = g.myBoard;
-        Piece whiteKnight = new Knight("White Knight", g.white, 3, 2, null);
-        Piece whiteKing = new King("White King", g.white, 2,2, null);
-        Piece blackKing = new King("White Knight", g.black, 0, 0, null);
-        Piece blackPawn = new Pawn("Black Pawn", g.black, 1, 3, null);
+        Piece whiteKnight = new Knight("White Knight", g.white, 3, 2);
+        Piece whiteKing = new King("White King", g.white, 2,2);
+        Piece blackKing = new King("White Knight", g.black, 0, 0);
+        Piece blackPawn = new Pawn("Black Pawn", g.black, 1, 3);
         board.getCell(0,0).setCurrent(blackKing);
         board.getCell(2,2).setCurrent(whiteKing);
         board.getCell(3,1).setCurrent(whiteKnight);
@@ -144,9 +144,9 @@ class GameTest {
     void testStalemate() {
         Game g = new Game();
         Board board = g.myBoard;
-        Piece whiteQueen = new Knight("White Queen", g.white, 1, 5, null);
-        Piece whiteKing = new King("White King", g.white, 2,6, null);
-        Piece blackKing = new King("White Knight", g.black, 0, 7, null);
+        Piece whiteQueen = new Knight("White Queen", g.white, 1, 5);
+        Piece whiteKing = new King("White King", g.white, 2,6);
+        Piece blackKing = new King("White Knight", g.black, 0, 7);
         board.getCell(1,5).setCurrent(blackKing);
         board.getCell(0,7).setCurrent(whiteKing);
         board.getCell(1,5).setCurrent(whiteQueen);
@@ -171,10 +171,10 @@ class GameTest {
     @Test
     void GameSimulation() {
         Game g = new Game();
-        Piece blackKing = new King("Black King", g.black, 0, 1, null);
-        Piece whiteKing = new King("White King", g.white, 2, 1, null);
-        Piece blackPawn = new Pawn("Black Pawn", g.black, 0, 2, null);
-        Piece whiteKnight = new Knight("White Knight", g.white, 3, 2, null);
+        Piece blackKing = new King("Black King", g.black, 0, 1);
+        Piece whiteKing = new King("White King", g.white, 2, 1);
+        Piece blackPawn = new Pawn("Black Pawn", g.black, 0, 2);
+        Piece whiteKnight = new Knight("White Knight", g.white, 3, 2);
         g.myBoard.getCell(0,1).setCurrent(blackKing);
         g.myBoard.getCell(2,1).setCurrent(whiteKing);
         g.myBoard.getCell(0,2).setCurrent(blackPawn);
