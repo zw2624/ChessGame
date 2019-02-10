@@ -86,6 +86,37 @@ public class Board {
         return grid[x][y];
     }
 
+    public Boolean hasOneBetween(int fromX, int fromY, int toX, int toY) {
+        int count = 0;
+        boolean isLine = (fromX == toX) || (fromY == toY);
+        if (!isLine) return false;
+        if (fromX == toX) {
+            int small = fromY < toY ? fromY : toY;
+            int big = fromY > toY ? fromY : toY;
+            if (big - small == 1){
+                return false;
+            }
+            for (int i = small + 1; i < big; i++) {
+                Cell cur = this.grid[fromX][i];
+                if (cur.getOwner() != 2) {
+                    count ++;
+                }
+            }
+        } else {
+            int small = fromX < toX ? fromX : toX;
+            int big = fromX > toX ? fromX : toX;
+            if (big - small == 1){
+                return false;
+            }
+            for (int i = small + 1; i < big; i++) {
+                Cell cur = this.grid[i][fromY];
+                if (cur.getOwner() != 2) {
+                    count ++;
+                }
+            }
+        }
+        return  count == 1;
+    }
 
     /**
      * move piece on board
