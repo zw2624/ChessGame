@@ -160,21 +160,24 @@ public class Board {
                 System.out.println(description);
                 return false;
             } else {
-                if (from.getCurrent() instanceof Pawn) {
-                    ((Pawn) from.getCurrent()).setFirst(false);
+                if (curPiece instanceof Pawn) {
+                    ((Pawn) curPiece).setFirst(false);
                 }
-                if (from.getCurrent() instanceof King) {
-
+                if (curPiece instanceof Guard) {
+                    ((Guard) curPiece).setFirst(false);
                 }
-
-
+                if (curPiece instanceof King) {
+                    if (!g.tryMove(curPiece.player, curPiece, toX, toY)) {
+                        description = "Your King will be in Check!";
+                        return false;
+                    }
+                }
                 description = "Move " + curPiece.Name + " to (" + toX + ", " + toY + ")";
                 g.getOpponent(p).removePiece(to.getCurrent());
                 to.removePiece();
                 to.setCurrent(curPiece);
                 from.removePiece();
                 g.next = g.getOpponent(p).getPlayerID();
-
                 System.out.println(description);
                 return true;
             }
