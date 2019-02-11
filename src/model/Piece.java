@@ -26,10 +26,18 @@ public abstract class Piece {
         player.addPiece(this);
     }
 
+    /**
+     * Set the image
+     * @param i the buffered image
+     */
     public void setImg(BufferedImage i) {
         this.img = i;
     }
 
+    /**
+     * Get image of the Piece
+     * @return the buffered image
+     */
     public BufferedImage getImg() {
         return img;
     }

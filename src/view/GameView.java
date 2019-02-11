@@ -7,6 +7,8 @@ import javax.swing.*;
 public class GameView {
 
     private JFrame window;
+    Game g;
+
 
     public GameView(){
         try {
@@ -17,7 +19,7 @@ public class GameView {
         window = new JFrame("Static Chessboard");
         window.setSize(800, 800);
         
-        Game g = new Game();
+        g = new Game();
         g.myBoard.setup();
         BoardView board = new BoardView(g);
         window.add(board.getChessBoard());
@@ -26,6 +28,10 @@ public class GameView {
     }
 
 
+    /**
+     * main function; Assignment 1.1 display only.
+     * @param args
+     */
     public static void main(String[] args) {
         new GameView();
     }

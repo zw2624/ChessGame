@@ -18,10 +18,11 @@ public class BoardView {
         this.init();
     }
 
+    /**
+     * Initiate the starting BoardView: draw grid and put pieces on board.
+     */
     private void init() {
         grid = new JButton[8][8];
-        /*Insets buttonMargin = new Insets(0, 0, 0, 0);*/
-
         for (int i = 0; i < 8; i++) {
             for (int j = 0; j < 8; j++) {
                 JButton b = new JButton();
@@ -36,9 +37,7 @@ public class BoardView {
                 grid[i][j] = b;
             }
         }
-
         setPieces(g);
-
         for (int i = 0; i < 8; i++) {
             for (int j = 0; j < 8; j++) {
                 if (j == 0) {
@@ -53,6 +52,10 @@ public class BoardView {
         }
     }
 
+    /**
+     * Put the piece on board according to the situation of the game
+     * @param g the game being displayed
+     */
     private void setPieces(Game g) {
         ArrayList<Piece> allPieces = g.white.getPieces();
         allPieces.addAll(g.black.getPieces());
@@ -65,6 +68,10 @@ public class BoardView {
         }
     }
 
+    /**
+     * Getter of chessboard
+     * @return a JPanel object
+     */
     public JPanel getChessBoard(){
         return chessBoard;
     }
