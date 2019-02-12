@@ -20,7 +20,8 @@ public abstract class Piece {
         String path = "imgs/" + name + ".png";
         try {
             img = ImageIO.read(getClass().getResource(path));
-        } catch (IOException e) {
+        } catch (IllegalArgumentException | IOException e) {
+            System.out.println("exception");
             img = null;
         }
         player.addPiece(this);

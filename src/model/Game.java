@@ -95,12 +95,14 @@ public class Game {
             for (int j = 0; j < 8; j ++) {
                 for (int k = 0; k < 8; k ++) {
                     if(p.checkMove(this.myBoard, p.x, p.y, j, k)) {
-                        return true;
+                        if (tryMove(me, p, j, k)) {
+                            return false;
+                        }
                     }
                 }
             }
         }
-        return false;
+        return true;
     }
 
 

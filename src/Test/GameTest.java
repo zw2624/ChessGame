@@ -3,10 +3,7 @@ package Test;
 import model.Board;
 import model.Game;
 import model.Piece;
-import model.Pieces.King;
-import model.Pieces.Knight;
-import model.Pieces.Pawn;
-import model.Pieces.Rook;
+import model.Pieces.*;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -92,6 +89,27 @@ class GameTest {
 
     }
 
+    @Test
+    void testTrymoveInvalid() {
+        Game g = new Game();
+        Board board = g.myBoard;
+        Piece whiteKnight = new Knight("White Knight", g.white, 3, 1);
+        Piece whiteKing = new King("White King", g.white, 2,2);
+        Piece blackKing = new King("White Knight", g.black, 0, 0);
+        Piece blackPawn = new Pawn("Black Pawn", g.black, 1, 3);
+        board.getCell(0,0).setCurrent(blackKing);
+        board.getCell(2,2).setCurrent(whiteKing);
+        board.getCell(3,1).setCurrent(whiteKnight);
+        board.getCell(1,3).setCurrent(blackPawn);
+        board.Kings[0] = whiteKing;
+        board.Kings[1] = blackKing;
+
+        boolean trial1 = g.tryMove(g.white, whiteKnight, 5, 3);
+        assertFalse(trial1);
+        boolean trial2 = g.tryMove(g.white, whiteKnight, 5, 0);
+        assertFalse(trial2);
+    }
+
     /**
      * Test Checkmate
      */
@@ -112,6 +130,8 @@ class GameTest {
         boolean Checkmate = g.isCheckmate(g.black, threats);
         assertTrue(Checkmate);
     }
+
+
 
     /**
      * Test when actually there is not checkmate
@@ -144,19 +164,35 @@ class GameTest {
     void testStalemate() {
         Game g = new Game();
         Board board = g.myBoard;
-        Piece whiteQueen = new Knight("White Queen", g.white, 1, 5);
+        Piece whiteQueen = new Queen("White Queen", g.white, 1, 5);
         Piece whiteKing = new King("White King", g.white, 2,6);
-        Piece blackKing = new King("White Knight", g.black, 0, 7);
-        board.getCell(1,5).setCurrent(blackKing);
-        board.getCell(0,7).setCurrent(whiteKing);
+        Piece blackKing = new King("Black King", g.black, 0, 7);
+        board.getCell(0,7).setCurrent(blackKing);
+        board.getCell(2,6).setCurrent(whiteKing);
         board.getCell(1,5).setCurrent(whiteQueen);
         board.Kings[0] = whiteKing;
         board.Kings[1] = blackKing;
 
+        assertTrue(whiteQueen.checkMove(g.myBoard, 1,5,0,6));
+        /**assertFalse(blackKing.checkMove(g.myBoard,0,7,0,6));*/
         boolean stalemate = g.isStalemate(g.black);
         assertTrue(stalemate);
     }
 
+    @Test
+    void testNoteStalemate() {
+        Game g = new Game();
+        Board board = g.myBoard;
+        Piece whiteKing = new King("White King", g.white, 3,3);
+        Piece blackKing = new King("Black King", g.black, 0, 7);
+        board.getCell(0,7).setCurrent(blackKing);
+        board.getCell(3,3).setCurrent(whiteKing);
+        board.Kings[0] = whiteKing;
+        board.Kings[1] = blackKing;
+
+        boolean stalemate = g.isStalemate(g.black);
+        assertFalse(stalemate);
+    }
 
     /**
      *  Test: if the 'move', 'check' work correctly together.
