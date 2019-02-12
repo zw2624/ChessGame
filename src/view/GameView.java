@@ -7,6 +7,8 @@ import javax.swing.*;
 public class GameView {
 
     private JFrame window;
+    private JMenuBar menuBar;
+    private BoardView board;
     Game g;
 
 
@@ -19,12 +21,18 @@ public class GameView {
         window = new JFrame("Static Chessboard");
         window.setSize(800, 800);
         
-        g = new Game();
+        this.g = new Game();
         g.myBoard.setup();
-        BoardView board = new BoardView(g);
+        this.board = new BoardView(g);
+        this.menuBar = new MenuView();
+
         window.add(board.getChessBoard());
+        window.setJMenuBar(menuBar);
         window.setVisible(true);
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+
+
     }
 
 
