@@ -2,13 +2,19 @@ package model;
 
 import java.util.ArrayList;
 
-
+/**
+ * Game Object contains all game information
+ * Including the chessboard, players and whose turn it is
+ */
 public class Game {
     public Board myBoard;
     public int next;
     public Player white, black;
 
 
+    /**
+     * Constructor
+     */
     public Game() {
         this.myBoard = new Board(this);
         white = new Player(0, true);
@@ -137,10 +143,10 @@ public class Game {
                     boolean canMove = p.checkMove(this.myBoard, p.x, p.y, j, k);
                     boolean notMine = myBoard.getCell(j, k).getOwner() != me.getPlayerID();
                     if (canMove & notMine) {
-                        if (tryMove(me, p, j, k)) {
+                        //if (tryMove(me, p, j, k)) {
                             // System.out.println("possible move: " + p.Name);
                             // System.out.println(j + " " + k);
-                        }
+                        //}
                         cum = cum || tryMove(me, p, j, k);
                     }
                 }

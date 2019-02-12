@@ -6,11 +6,18 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
 
+/**
+ * BoardView generates a JPanel Object representing the Chess Board
+ */
 public class BoardView {
     private Game g;
     private JPanel chessBoard;
     private JButton[][] grid;
 
+    /**
+     * Constructor
+     * @param g Game Object (will be removed in Assginment1.2)
+     */
     public BoardView(Game g) {
         this.g = g;
         chessBoard = new JPanel(new GridLayout(0,9));

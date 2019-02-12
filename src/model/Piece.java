@@ -5,6 +5,12 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
+
+/**
+ * Abstract Piece Class
+ * Supposed to be put in a Cell Object.
+ */
+
 public abstract class Piece {
     public String Name;
     public Player player;
@@ -12,6 +18,13 @@ public abstract class Piece {
     public int y;
     private BufferedImage img;
 
+    /**
+     * Constructor
+     * @param name
+     * @param player
+     * @param x
+     * @param y
+     */
     public Piece(String name, Player player,int x, int y) {
         Name = name;
         this.player = player;

@@ -6,6 +6,12 @@ import model.Player;
 
 import java.awt.image.BufferedImage;
 
+/**
+ * Classic Knight Piece extending Pieces Object
+ *
+ * Rule:
+ * moves to any of the closest squares that are not on the same rank, file, or diagonal. (L-shape)
+ */
 public class Knight extends Piece {
 
     public Knight(String name, Player player, int x, int y) {

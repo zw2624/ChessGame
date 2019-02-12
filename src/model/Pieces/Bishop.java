@@ -6,8 +6,13 @@ import model.Player;
 
 import java.awt.image.BufferedImage;
 
+/**
+ * Classic Bishop Piece extending Pieces Object
+ *
+ * Rule:
+ * can move any number of squares diagonally, but cannot leap over other pieces.
+ */
 public class Bishop extends Piece {
-
 
     public Bishop(String name, Player player, int x, int y) {
         super(name, player, x, y);

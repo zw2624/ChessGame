@@ -9,6 +9,13 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
+/**
+ * Classic Rook Piece extending Pieces Object
+ *
+ * Rule:
+ * A rook can move any number of squares along a rank or file, but cannot leap over other pieces.
+ * Along with the king, a rook is involved during the king's castling move.
+ */
 public class Rook extends Piece {
 
 

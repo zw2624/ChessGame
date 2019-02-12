@@ -2,12 +2,16 @@ package model;
 
 import model.Pieces.*;
 
+
+/**
+ * Board contains infomation of the chessborad
+ * including Cells and have direct access to two King Objects
+ */
 public class Board {
 
 
     private Game g;
     private Cell[][] grid = new Cell[8][8];
-    public int[][] kingsPos;
     public Piece[] Kings;
 
     /**
@@ -86,6 +90,14 @@ public class Board {
         return grid[x][y];
     }
 
+    /**
+     * Check if there is only one piece between two places in a line
+     * @param fromX
+     * @param fromY
+     * @param toX
+     * @param toY
+     * @return a boolean if there is only one
+     */
     public Boolean hasOneBetween(int fromX, int fromY, int toX, int toY) {
         int count = 0;
         boolean isLine = (fromX == toX) || (fromY == toY);

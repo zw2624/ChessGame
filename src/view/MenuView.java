@@ -4,6 +4,9 @@ import javax.swing.*;
 
 public class MenuView extends JMenuBar {
 
+    /**
+     * Constructor
+     */
     public MenuView() {
         super();
         JMenu newGame = new JMenu("New Game");

@@ -1,5 +1,8 @@
 package model;
 
+/**
+ * Cell Object is the container of the Pieces
+ */
 public class Cell {
     public int x, y;
     private int Owner;

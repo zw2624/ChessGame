@@ -6,6 +6,13 @@ import model.Player;
 
 import java.awt.image.BufferedImage;
 
+/**
+ * Custom Piece by Zihe Wang extending Pieces Object
+ * Similar to '砲' in Chinese Chess
+ *
+ * Rule:
+ * Catapult can only capture by jumping a single piece。
+ */
 public class Catapult extends Piece {
 
     public Catapult(String name, Player player, int x, int y) {

@@ -2,11 +2,20 @@ package model;
 
 import java.util.ArrayList;
 
+/**
+ * Player Object contains player information
+ * including ID, who is first, and live Pieces
+ */
 public class Player {
     public boolean first;
     private int playerID;
     private ArrayList<Piece> livePieces;
 
+    /**
+     * Constructor
+     * @param ID
+     * @param isFirst
+     */
     public Player(int ID, boolean isFirst) {
         this.first = isFirst;
         this.playerID = ID;

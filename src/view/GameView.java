@@ -4,6 +4,9 @@ import model.Game;
 
 import javax.swing.*;
 
+/**
+ * GameView includes the a JPanel for board and a Menu Bar.
+ */
 public class GameView {
 
     private JFrame window;
@@ -12,6 +15,9 @@ public class GameView {
     Game g;
 
 
+    /**
+     * Constructor
+     */
     public GameView(){
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());

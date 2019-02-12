@@ -6,6 +6,16 @@ import model.Player;
 
 import java.awt.image.BufferedImage;
 
+
+/**
+ * Classic Pawn Piece extending Pieces Object
+ * Includes an Boolean isFirst to indicate if that is the first move of the object
+ *
+ * Rule:
+ * 1. can move forward to the unoccupied square immediately in front of it on the same file
+ * 2. on its first move it can advance two squares along the same file
+ * 3. can capture an opponent's piece on a square diagonally in front of it on an adjacent file
+ */
 public class Pawn extends Piece {
     private boolean isFirst;
 

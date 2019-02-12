@@ -184,7 +184,7 @@ class PieceTest {
     }
 
     @Test
-    void testPawnEnPassant() {
+    void testPawnXmove() {
         Game g = new Game();
         Piece whitePawn = new Pawn("White Pawn", g.white, 5,1);
         Piece blackPawn1 = new Pawn("Black Pawn", g.black, 4,2);

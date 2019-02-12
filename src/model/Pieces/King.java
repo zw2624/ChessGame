@@ -6,6 +6,13 @@ import model.Player;
 
 import java.awt.image.BufferedImage;
 
+/**
+ * Classic King Piece extending Pieces Object
+ *
+ * Rule:
+ * 1. moves one square in any direction.
+ * 2. cannot move if that file can be reached by the other king.
+ */
 public class King extends Piece {
 
     public King(String name, Player player, int x, int y) {
