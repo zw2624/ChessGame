@@ -11,6 +11,11 @@ public class Player {
     private int playerID;
     private ArrayList<Piece> livePieces;
 
+    int winNum;
+    int drawNum;
+    int loseNum;
+    boolean canUndo;
+
     /**
      * Constructor
      * @param ID
@@ -20,6 +25,10 @@ public class Player {
         this.first = isFirst;
         this.playerID = ID;
         this.livePieces = new ArrayList<Piece>();
+        this.winNum = 0;
+        this.drawNum = 0;
+        this.loseNum = 0;
+        this.canUndo = false;
     }
 
     /**
@@ -30,12 +39,48 @@ public class Player {
         return playerID;
     }
 
+    public int getWinNum() {
+        return winNum;
+    }
+
+    public void addWinNum() {
+        this.winNum += 1;
+    }
+
+    public int getDrawNum() {
+        return drawNum;
+    }
+
+    public void addDrawNum() {
+        this.drawNum += 1;
+    }
+
+    public int getLoseNum() {
+        return loseNum;
+    }
+
+    public void addLoseNum() {
+        this.loseNum += 1;
+    }
+
+    public boolean isCanUndo() {
+        return canUndo;
+    }
+
+    public void setCanUndo(boolean canUndo) {
+        this.canUndo = canUndo;
+    }
+
     /**
      * Remove a piece of a player
      * @param e the piece that is removed (usually it was eaten by opponent)
      */
     public void removePiece(Piece e) {
         livePieces.remove(e);
+    }
+
+    public void removeAllPiece() {
+        livePieces.clear();
     }
 
     /**

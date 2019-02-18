@@ -260,6 +260,8 @@ public class Board {
 
         if (from.canGetTo(this,toX, toY)) {
             boolean hasMine = to.getOwner() == from.getOwner();
+            boolean noleap = this.checkLeap(fromX, fromY, toX, toY);
+            if (!noleap & !(curPiece instanceof Catapult)) return false;
             if (hasMine) {
                 description = "That cell has your piece!";
                 System.out.println(description);

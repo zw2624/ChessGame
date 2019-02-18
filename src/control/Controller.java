@@ -28,6 +28,7 @@ public class Controller {
         source = null;
         destin = null;
         addClickSquareListener(new onClickListener());
+        addForfeitListener();
     }
 
 
@@ -62,7 +63,10 @@ public class Controller {
         }
     }
 
-
+    public void addForfeitListener() {
+        gameView.getWhiteTool().forfeit.addActionListener(new forfeitListener(g.white));
+        gameView.getBlackTool().forfeit.addActionListener(new forfeitListener(g.black));
+    }
 
     private class onClickListener implements ActionListener {
         @Override
@@ -94,6 +98,23 @@ public class Controller {
                 from = null;
                 to = null;
             }
+        }
+    }
+
+    private class forfeitListener implements ActionListener {
+
+        private Player player;
+
+        public forfeitListener(Player player) {
+            this.player = player;
+        }
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            player.addLoseNum();
+            g.restart();
+            gameView.getBoard().clearAll();
+            gameView.getBoard().setPieces(g);
         }
     }
 

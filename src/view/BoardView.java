@@ -77,6 +77,16 @@ public class BoardView {
         }
     }
 
+
+    public void clearAll() {
+        for (int i = 0; i < 8; i++) {
+            for (int j = 0; j < 8; j++) {
+                grid[i][j].setIcon(null);
+            }
+        }
+    }
+
+
     /**
      * Getter of chessboard
      * @return a JPanel object

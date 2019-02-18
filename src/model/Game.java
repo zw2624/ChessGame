@@ -22,6 +22,16 @@ public class Game {
         int next = 0;
     }
 
+    public void restart() {
+        this.myBoard = new Board(this);
+        int next = 0;
+        white.first = true;
+        black.first = false;
+        white.removeAllPiece();
+        black.removeAllPiece();
+        myBoard.setup();
+    }
+
     /**
      * Get the opponent of player p
      * @param p Player p

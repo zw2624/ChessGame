@@ -15,7 +15,7 @@ public class MenuView extends JMenuBar {
         newGame.add(vsAI);
         newGame.add(vsHU);
 
-        JMenu history = new JMenu("Check History");
+        JMenu history = new JMenu("Check Scores");
         JMenu suggest = new JMenu("Suggest Move");
 
         this.add(newGame);

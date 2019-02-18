@@ -4,6 +4,8 @@ import control.Controller;
 import model.Game;
 
 import javax.swing.*;
+import javax.swing.border.Border;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -15,6 +17,8 @@ public class GameView {
     private JFrame window;
     private JMenuBar menuBar;
     private BoardView board;
+    private ToolView blackTool;
+    private ToolView whiteTool;
     Game g;
 
     /**
@@ -33,8 +37,12 @@ public class GameView {
         g.myBoard.setup();
         this.board = new BoardView(g);
         this.menuBar = new MenuView();
+        this.blackTool = new ToolView("Toolbox for Black", g.black);
+        this.whiteTool = new ToolView("Toolbox for White", g.white);
         window.add(board.getChessBoard());
         window.setJMenuBar(menuBar);
+        window.add(blackTool, BorderLayout.EAST);
+        window.add(whiteTool, BorderLayout.WEST);
         window.setVisible(true);
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -44,6 +52,14 @@ public class GameView {
 
     public BoardView getBoard() {
         return board;
+    }
+
+    public ToolView getBlackTool() {
+        return blackTool;
+    }
+
+    public ToolView getWhiteTool() {
+        return whiteTool;
     }
 
     /**
