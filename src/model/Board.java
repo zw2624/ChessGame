@@ -98,36 +98,104 @@ public class Board {
      * @param toY
      * @return a boolean if there is only one
      */
-    public Boolean hasOneBetween(int fromX, int fromY, int toX, int toY) {
-        int count = 0;
+    public boolean hasOneBetween(int fromX, int fromY, int toX, int toY) {
         boolean isLine = (fromX == toX) || (fromY == toY);
         if (!isLine) return false;
+        int big;
+        int small;
+        int fix;
+        boolean flag;
         if (fromX == toX) {
-            int small = fromY < toY ? fromY : toY;
-            int big = fromY > toY ? fromY : toY;
-            if (big - small == 1){
-                return false;
-            }
-            for (int i = small + 1; i < big; i++) {
-                Cell cur = this.grid[fromX][i];
-                if (cur.getOwner() != 2) {
-                    count ++;
-                }
-            }
+            small = fromY < toY ? fromY : toY;
+            big = fromY > toY ? fromY : toY;
+            fix = fromX;
+            flag = true;
         } else {
-            int small = fromX < toX ? fromX : toX;
-            int big = fromX > toX ? fromX : toX;
-            if (big - small == 1){
-                return false;
-            }
-            for (int i = small + 1; i < big; i++) {
-                Cell cur = this.grid[i][fromY];
-                if (cur.getOwner() != 2) {
-                    count ++;
-                }
+            big = fromX > toX ? fromX : toX;
+            small = fromX < toX ? fromX : toX;
+            fix = fromY;
+            flag = false;
+        }
+        if (big - small == 1){
+            return false;
+        }
+        return forLoopCheckLine(flag, fix, small, big) == 1;
+    }
+
+
+
+    public boolean forLoopCheckDiag(int fromX, int fromY, int toX, int toY){
+        if (Math.abs(fromX - toX) == 1) return true;
+        if (fromX < toX && fromY < toY) {
+            return forLoopCheckDiag(fromX + 1, fromY + 1, toX, toY);
+        } else if (fromX > toX && fromY > toY) {
+            return forLoopCheckDiag(fromX - 1, fromY - 1, toX, toY);
+        } else if (fromX < toX && fromY > toY) {
+            return forLoopCheckDiag(fromX + 1, fromY - 1, toX, toY);
+        } else if (fromX > toX && fromY < toY) {
+            return forLoopCheckDiag(fromX - 1, fromY + 1, toX, toY);
+        } else {
+            return false;
+        }
+    }
+
+    /**
+     * helper function
+     * @param isX
+     * @param fix
+     * @param small
+     * @param big
+     * @return number of occupied cells
+     */
+    public int forLoopCheckLine(Boolean isX, int fix, int small, int big) {
+        int count = 0;
+        for (int i = small+1; i < big; i++) {
+            if (isX) {
+                if (this.getCell(fix, i).getOwner() != 2) count ++;
+            } else {
+                if (this.getCell(i, fix).getOwner() != 2) count ++;
             }
         }
-        return  count == 1;
+        return count;
+    }
+
+    /**
+     * Check if the move is leaping over other pieces.
+     * Also checked if moving in line or diagonally
+     * @param fromX
+     * @param fromY
+     * @param toX
+     * @param toY
+     * @return
+     */
+    public boolean checkLeap(int fromX, int fromY, int toX, int toY) {
+        boolean isXLine = fromX == toX;
+        boolean isYLine = fromY == toY;
+        boolean isDiag = Math.abs(fromX - toX) == Math.abs(fromY - toY);
+        int small;
+        int big;
+        int fix;
+        boolean flag;
+        if (!isDiag & !isXLine & !isYLine) return false;
+        if (isDiag) {
+            return forLoopCheckDiag(fromX, fromY, toX, toY);
+        }
+        if (isXLine) {
+            small = fromY < toY ? fromY : toY;
+            big = fromY > toY ? fromY : toY;
+            fix = fromX;
+            flag = true;
+        } else {
+            big = fromX > toX ? fromX : toX;
+            small = fromX < toX ? fromX : toX;
+            fix = fromY;
+            flag = false;
+        }
+        if (big - small == 1){
+            return true;
+        }
+        return forLoopCheckLine(flag, fix, small, big) == 0;
+
     }
 
     /**
@@ -165,6 +233,9 @@ public class Board {
         }
         Cell to = this.getCell(toX, toY);
         Piece curPiece = from.getCurrent();
+
+
+
         if (from.canGetTo(this,toX, toY)) {
             boolean hasMine = to.getOwner() == from.getOwner();
             if (hasMine) {
