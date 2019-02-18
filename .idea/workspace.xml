@@ -2,25 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4839883d-ff55-408a-95f4-2c6e20834265" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/control/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/sp19-cs242-assignment1/Test/PieceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/sp19-cs242-assignment1/Test/PieceTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/sp19-cs242-assignment1/model/Board.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/sp19-cs242-assignment1/model/Cell.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/sp19-cs242-assignment1/model/Cell.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/sp19-cs242-assignment1/model/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/sp19-cs242-assignment1/model/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/sp19-cs242-assignment1/model/Piece.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/sp19-cs242-assignment1/model/Piece.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/sp19-cs242-assignment1/model/Pieces/Bishop.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/sp19-cs242-assignment1/model/Pieces/Bishop.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/sp19-cs242-assignment1/model/Pieces/Catapult.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/sp19-cs242-assignment1/model/Pieces/Catapult.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/sp19-cs242-assignment1/model/Pieces/Guard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/sp19-cs242-assignment1/model/Pieces/Guard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/sp19-cs242-assignment1/model/Pieces/King.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/sp19-cs242-assignment1/model/Pieces/King.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/sp19-cs242-assignment1/model/Pieces/Knight.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/sp19-cs242-assignment1/model/Pieces/Knight.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/sp19-cs242-assignment1/model/Pieces/Pawn.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/sp19-cs242-assignment1/model/Pieces/Pawn.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/sp19-cs242-assignment1/model/Pieces/Queen.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/sp19-cs242-assignment1/model/Pieces/Queen.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/sp19-cs242-assignment1/model/Pieces/Rook.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/sp19-cs242-assignment1/model/Pieces/Rook.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/sp19-cs242-assignment1/model/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/sp19-cs242-assignment1/model/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/sp19-cs242-assignment1/view/BoardView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/sp19-cs242-assignment1/view/BoardView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/sp19-cs242-assignment1/view/GameView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/sp19-cs242-assignment1/view/GameView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/sp19-cs242-assignment1/view/MenuView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/sp19-cs242-assignment1/view/MenuView.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/BoardView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/BoardView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/GameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/GameView.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -46,11 +34,37 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/view/BoardView.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="420">
+              <caret line="28" column="5" lean-forward="true" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#2512#2513#0" expanded="true" />
+                <element signature="e#2539#2540#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/model/Board.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="35" column="8" selection-start-line="35" selection-start-column="8" selection-end-line="35" selection-end-column="8" />
+            <state relative-caret-position="270">
+              <caret line="287" column="13" lean-forward="true" selection-start-line="287" selection-start-column="13" selection-end-line="287" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/model/Game.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1677">
+              <caret line="138" column="40" lean-forward="true" selection-start-line="138" selection-start-column="40" selection-end-line="138" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -65,79 +79,24 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/model/Game.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1920">
-              <caret line="128" column="20" selection-start-line="128" selection-start-column="20" selection-end-line="128" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/view/GameView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="30" column="24" selection-start-line="30" selection-start-column="24" selection-end-line="30" selection-end-column="24" />
+            <state relative-caret-position="405">
+              <caret line="54" column="52" selection-start-line="54" selection-start-column="52" selection-end-line="54" selection-end-column="52" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#992#993#0" expanded="true" />
+                <element signature="e#1020#1021#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Test/GameTest.java">
+        <entry file="file://$PROJECT_DIR$/src/control/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2535">
-              <caret line="177" column="51" selection-start-line="177" selection-start-column="51" selection-end-line="177" selection-end-column="51" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/model/Piece.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="780">
-              <caret line="59" column="9" selection-start-line="59" selection-start-column="9" selection-end-line="59" selection-end-column="9" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Test/PieceTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="24" column="17" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="17" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/model/Pieces/Catapult.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="15" column="21" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/model/Pieces/Guard.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="16" column="28" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
+            <state relative-caret-position="241">
+              <caret line="80" column="59" lean-forward="true" selection-start-line="80" selection-start-column="59" selection-end-line="80" selection-end-column="59" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -197,7 +156,6 @@
         <option value="$PROJECT_DIR$/src/Test/GameTest.java" />
         <option value="$PROJECT_DIR$/src/Test/CellTest.java" />
         <option value="$PROJECT_DIR$/src/model/Piece.java" />
-        <option value="$PROJECT_DIR$/src/model/Game.java" />
         <option value="$PROJECT_DIR$/src/model/Player.java" />
         <option value="$PROJECT_DIR$/src/model/Cell.java" />
         <option value="$PROJECT_DIR$/src/model/Pieces/Rook.java" />
@@ -209,10 +167,12 @@
         <option value="$PROJECT_DIR$/src/model/Pieces/Guard.java" />
         <option value="$PROJECT_DIR$/src/model/Pieces/Catapult.java" />
         <option value="$PROJECT_DIR$/src/model/Pieces/Bishop.java" />
-        <option value="$PROJECT_DIR$/src/view/GameView.java" />
         <option value="$PROJECT_DIR$/src/view/MenuView.java" />
-        <option value="$PROJECT_DIR$/src/view/BoardView.java" />
         <option value="$PROJECT_DIR$/src/Test/GUITest.java" />
+        <option value="$PROJECT_DIR$/src/model/Game.java" />
+        <option value="$PROJECT_DIR$/src/view/GameView.java" />
+        <option value="$PROJECT_DIR$/src/view/BoardView.java" />
+        <option value="$PROJECT_DIR$/src/control/Controller.java" />
         <option value="$PROJECT_DIR$/src/model/Board.java" />
       </list>
     </option>
@@ -245,14 +205,13 @@
               <item name="sp19-cs242-assignment1" type="b2602c69:ProjectViewProjectNode" />
               <item name="sp19-cs242-assignment1" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
+              <item name="control" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="sp19-cs242-assignment1" type="b2602c69:ProjectViewProjectNode" />
               <item name="sp19-cs242-assignment1" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="model" type="462c0819:PsiDirectoryNode" />
-              <item name="Pieces" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="sp19-cs242-assignment1" type="b2602c69:ProjectViewProjectNode" />
@@ -279,7 +238,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550460222313" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550471675166" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
@@ -313,7 +272,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.Test in sp19-cs242-assignment1">
+  <component name="RunManager" selected="Application.GameView">
     <configuration name="sandbox" type="Applet" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="GUI.sandbox" />
       <module name="sp19-cs242-assignment1" />
@@ -477,7 +436,7 @@
       <workItem from="1550001869829" duration="6511000" />
       <workItem from="1550008563195" duration="5464000" />
       <workItem from="1550091082431" duration="7000" />
-      <workItem from="1550261302184" duration="3686000" />
+      <workItem from="1550261302184" duration="10314000" />
     </task>
     <servers />
   </component>
@@ -514,7 +473,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="103622000" />
+    <option name="totallyTimeSpent" value="110250000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="944" extended-state="0" />
@@ -530,7 +489,7 @@
       <window_info id="Favorites" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3286385" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3286385" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -554,7 +513,7 @@
       <window_info anchor="right" id="Coverage" order="9" side_tool="true" visible="true" weight="0.12698413" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24481075" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25091577" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -575,6 +534,7 @@
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="11" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.3274648" />
+      <window_info anchor="bottom" id="Duplicate detector" order="13" weight="0.3298122" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" visible="true" weight="0.24969475" />
@@ -746,40 +706,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/view/BoardView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="42" column="42" selection-start-line="42" selection-start-column="42" selection-end-line="42" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/view/MenuView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/Game.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1920">
-          <caret line="128" column="20" selection-start-line="128" selection-start-column="20" selection-end-line="128" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/view/GameView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="30" column="24" selection-start-line="30" selection-start-column="24" selection-end-line="30" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Test/GameTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2535">
@@ -830,6 +756,42 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/jre/lib/rt.jar!/com/apple/laf/AquaUtils.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4217">
+          <caret line="373" selection-start-line="373" selection-end-line="373" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/control/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="241">
+          <caret line="80" column="59" lean-forward="true" selection-start-line="80" selection-start-column="59" selection-end-line="80" selection-end-column="59" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/BoardView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" column="5" lean-forward="true" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2512#2513#0" expanded="true" />
+            <element signature="e#2539#2540#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/MenuView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/model/Pieces/Bishop.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -837,10 +799,32 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/GameView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="54" column="52" selection-start-line="54" selection-start-column="52" selection-end-line="54" selection-end-column="52" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#992#993#0" expanded="true" />
+            <element signature="e#1020#1021#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1677">
+          <caret line="138" column="40" lean-forward="true" selection-start-line="138" selection-start-column="40" selection-end-line="138" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/model/Board.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="35" column="8" selection-start-line="35" selection-start-column="8" selection-end-line="35" selection-end-column="8" />
+        <state relative-caret-position="270">
+          <caret line="287" column="13" lean-forward="true" selection-start-line="287" selection-start-column="13" selection-end-line="287" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -2,6 +2,8 @@ package model;
 
 import model.Pieces.*;
 
+import java.util.ArrayList;
+
 
 /**
  * Board contains infomation of the chessborad
@@ -70,7 +72,7 @@ public class Board {
         this.grid[6][7].setCurrent(blackRightKnight);
         this.grid[7][7].setCurrent(blackRightRook);
         for (int i = 0; i < 8; i++) {
-            Piece blackPawn = new Pawn("Black Pawn", g.white, i, 6);
+            Piece blackPawn = new Pawn("Black Pawn", g.black, i, 6);
             this.grid[i][6].setCurrent(blackPawn);
         }
 
@@ -176,7 +178,7 @@ public class Board {
         int big;
         int fix;
         boolean flag;
-        if (!isDiag & !isXLine & !isYLine) return false;
+        if (!isDiag & !isXLine & !isYLine) return true;
         if (isDiag) {
             return forLoopCheckDiag(fromX, fromY, toX, toY);
         }
@@ -198,6 +200,25 @@ public class Board {
 
     }
 
+    public ArrayList<Cell> possibleMove(Cell cur) {
+        ArrayList<Cell> ret = new ArrayList<>();
+        int fromX = cur.x;
+        int fromY = cur.y;
+        for (int i = 0; i < 8; i++) {
+            for (int j = 0; j < 8; j++) {
+                boolean b1 = cur.canGetTo(this, i, j);
+                boolean hasMine = cur.getOwner() == this.getCell(i,j).getOwner();
+                boolean notLeap = this.checkLeap(fromX, fromY, i, j);
+                if (b1 & !hasMine & notLeap) {
+                    ret.add(this.getCell(i,j));
+                }
+            }
+        }
+        return ret;
+    }
+
+
+
     /**
      * move piece on board
      * @param p the player moving the piece
@@ -210,7 +231,8 @@ public class Board {
     public boolean movePiece(Player p, int fromX, int fromY, int toX, int toY) {
         Cell from = this.getCell(fromX, fromY);
         String description;
-
+        description = "Player " + p.getPlayerID() + " wants to move " + "(" + fromX + ", " + fromY + ")";
+        System.out.println(description);
         if (g.next != p.getPlayerID()) {
             description = "Not your turn";
             System.out.println(description);
@@ -222,7 +244,7 @@ public class Board {
             return false;
         }
         if (p.getPlayerID() != from.getOwner()) {
-            description = "Not your pieces!";
+            description = "Not your pieces! this belongs to " + from.getOwner();
             System.out.println(description);
             return false;
         }

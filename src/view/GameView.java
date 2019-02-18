@@ -1,8 +1,11 @@
 package view;
 
+import control.Controller;
 import model.Game;
 
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  * GameView includes the a JPanel for board and a Menu Bar.
@@ -13,7 +16,6 @@ public class GameView {
     private JMenuBar menuBar;
     private BoardView board;
     Game g;
-
 
     /**
      * Constructor
@@ -31,7 +33,6 @@ public class GameView {
         g.myBoard.setup();
         this.board = new BoardView(g);
         this.menuBar = new MenuView();
-
         window.add(board.getChessBoard());
         window.setJMenuBar(menuBar);
         window.setVisible(true);
@@ -41,12 +42,16 @@ public class GameView {
 
     }
 
+    public BoardView getBoard() {
+        return board;
+    }
 
     /**
      * main function; Assignment 1.1 display only.
      * @param args
      */
     public static void main(String[] args) {
-        new GameView();
+        GameView view = new GameView();
+        Controller c = new Controller(view.g, view);
     }
 }

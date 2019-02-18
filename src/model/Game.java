@@ -35,6 +35,16 @@ public class Game {
         }
     }
 
+
+    public Player getPlayer(int id) {
+        if (white.getPlayerID() == id) {
+            return white;
+        } else {
+            return black;
+        }
+    }
+
+
     /**
      * get the pieces that make a Player in check
      * @param me the Player being checked

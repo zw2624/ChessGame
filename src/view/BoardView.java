@@ -1,9 +1,11 @@
 package view;
 
 import com.sun.xml.internal.messaging.saaj.soap.JpegDataContentHandler;
+import control.Controller;
 import model.*;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 /**
@@ -13,6 +15,7 @@ public class BoardView {
     private Game g;
     private JPanel chessBoard;
     private JButton[][] grid;
+
 
     /**
      * Constructor
@@ -37,7 +40,7 @@ public class BoardView {
                 if ((j + i)%2 == 0) {
                     b.setBackground(Color.white);
                 } else {
-                    b.setBackground(Color.gray);
+                    b.setBackground(Color.darkGray);
                 }
                 b.setOpaque(true);
                 b.setBorderPainted(false);
@@ -63,13 +66,12 @@ public class BoardView {
      * Put the piece on board according to the situation of the game
      * @param g the game being displayed
      */
-    private void setPieces(Game g) {
+    public void setPieces(Game g) {
         ArrayList<Piece> allPieces = g.white.getPieces();
         allPieces.addAll(g.black.getPieces());
         int count = 0;
         while (allPieces.size() > count) {
             Piece p = allPieces.get(count);
-            if (p.getImg() != null) {System.out.println("null!");}
             grid[7-p.y][p.x].setIcon(new ImageIcon(p.getImg()));
             count ++;
         }
@@ -81,6 +83,24 @@ public class BoardView {
      */
     public JPanel getChessBoard(){
         return chessBoard;
+    }
+
+    public JButton[][] getGrid() {
+        return grid;
+    }
+
+    public void paintGrey(Cell c) {
+        JButton target = grid[7-c.y][c.x];
+        target.setBackground(Color.LIGHT_GRAY);
+    }
+
+    public void paintOrigin(Cell c) {
+        JButton target = grid[7-c.y][c.x];
+        if ((7-c.y + c.x)%2 == 0) {
+            target.setBackground(Color.white);
+        } else {
+            target.setBackground(Color.DARK_GRAY);
+        }
     }
 
 }
