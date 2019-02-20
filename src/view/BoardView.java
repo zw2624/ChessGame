@@ -67,7 +67,8 @@ public class BoardView {
      * @param g the game being displayed
      */
     public void setPieces(Game g) {
-        ArrayList<Piece> allPieces = g.white.getPieces();
+        ArrayList<Piece> allPieces = new ArrayList<>();
+        allPieces.addAll(g.white.getPieces());
         allPieces.addAll(g.black.getPieces());
         int count = 0;
         while (allPieces.size() > count) {
@@ -77,13 +78,23 @@ public class BoardView {
         }
     }
 
-
+    /**
+     * Clear all the icons on the chessboard.
+     */
     public void clearAll() {
         for (int i = 0; i < 8; i++) {
             for (int j = 0; j < 8; j++) {
-                grid[i][j].setIcon(null);
+                grid[i][j].setIcon(new ImageIcon());
             }
         }
+    }
+
+    /**
+     * Clear and reset the chessboard.
+     */
+    public void refresh(){
+        clearAll();
+        setPieces(g);
     }
 
 

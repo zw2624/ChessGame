@@ -1,6 +1,10 @@
 package model;
 
+import model.Pieces.Catapult;
+import model.Pieces.Pawn;
+
 import java.util.ArrayList;
+import java.util.LinkedList;
 
 /**
  * Game Object contains all game information
@@ -10,26 +14,60 @@ public class Game {
     public Board myBoard;
     public int next;
     public Player white, black;
+    public ArrayList<Move> moveHistory;
 
 
     /**
      * Constructor
      */
-    public Game() {
+    public Game(String ... args) {
         this.myBoard = new Board(this);
-        white = new Player(0, true);
-        black = new Player(1, false);
+        String name1 = args.length == 0 ? "white":args[0];
+        String name2 = args.length == 0 ? "black":args[1];
+        white = new Player(name1, 0, true);
+        black = new Player(name2, 1, false);
+        moveHistory = new ArrayList<Move>();
         int next = 0;
     }
 
-    public void restart() {
+    /**
+     * restart the game
+     * @param custom if players want to use custom pieces
+     */
+    public void restart(boolean custom) {
         this.myBoard = new Board(this);
         int next = 0;
         white.first = true;
         black.first = false;
         white.removeAllPiece();
         black.removeAllPiece();
-        myBoard.setup();
+        moveHistory.removeAll(moveHistory);
+        myBoard.setup(custom);
+    }
+
+    /**
+     * Undo the previous move
+     */
+    public void undo() {
+        Player lastPlayer = getOpponent(getPlayer(this.next));
+        this.next = lastPlayer.getPlayerID();
+        Move lastMove = myBoard.getLastMove();
+        Cell from = lastMove.getFrom();
+        Cell to = lastMove.getTo();
+        from.setCurrent(lastMove.getMyPiece());
+        if (lastMove.getMyPiece() instanceof Pawn) {
+            if (Math.abs(from.y - to.y) == 2) {
+                ((Pawn) lastMove.getMyPiece()).setFirst(true);
+            }
+            if (from.y == 1 & lastPlayer.getPlayerID() == 0) {
+                ((Pawn) lastMove.getMyPiece()).setFirst(true);
+            }
+            if (from.y == 6 & lastPlayer.getPlayerID() == 1) {
+                ((Pawn) lastMove.getMyPiece()).setFirst(true);
+            }
+        }
+        to.setCurrent(lastMove.getEaten());
+        this.moveHistory.add(new Move(lastPlayer, null, null, null, null));
     }
 
     /**
@@ -46,6 +84,11 @@ public class Game {
     }
 
 
+    /**
+     * Get the player
+     * @param id PlayerID
+     * @return a Player Object with that ID
+     */
     public Player getPlayer(int id) {
         if (white.getPlayerID() == id) {
             return white;
@@ -63,14 +106,15 @@ public class Game {
     public ArrayList<Piece> inCheck(Player me) {
         Player op = getOpponent(me);
         int[] kingpos = {this.myBoard.Kings[me.getPlayerID()].x, this.myBoard.Kings[me.getPlayerID()].y};
-        //System.out.println("my king:"+this.myBoard.Kings[me.getPlayerID()].x+ this.myBoard.Kings[me.getPlayerID()].y );
         ArrayList<Piece> opPieces = op.getPieces();
         ArrayList<Piece> threats = new ArrayList<Piece>();
         for (int i = 0; i < opPieces.size(); i++) {
             Piece opP = opPieces.get(i);
             if (opP.checkMove(this.myBoard, opP.x, opP.y, kingpos[0], kingpos[1])) {
-                threats.add(opP);
-                //System.out.println("added " + opP.Name );
+                boolean notLeap = myBoard.checkLeap(opP.x, opP.y, kingpos[0], kingpos[1]);
+                if (notLeap) {
+                    threats.add(opP);
+                }
             }
         }
         return threats;
@@ -99,6 +143,7 @@ public class Game {
             tcell.removePiece();
             tcell.setCurrent(threat);
         } else {
+            dcell.removePiece();
             tcell.setCurrent(defender);
             flag = inCheck(me).size() == 0;
             tcell.removePiece();

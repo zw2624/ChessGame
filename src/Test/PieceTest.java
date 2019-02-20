@@ -16,6 +16,8 @@ class PieceTest {
        These test are included and tested in board logic.
     */
 
+
+
     @Test
     void testPieceBasic() {
         Game g = new Game();
@@ -79,6 +81,11 @@ class PieceTest {
     @Test
     void testGuardAfterFirstMove() {
         Game g = new Game();
+        Piece whiteKing = new King("White King", g.white,3,0);
+        g.myBoard.getCell(3,0).setCurrent(whiteKing);
+        Piece blackKing = new King("Black King", g.black,3,7);
+        g.myBoard.getCell(3,7).setCurrent(blackKing);
+        g.myBoard.Kings = new Piece[]{whiteKing, blackKing};
         Piece whiteGuard = new Guard("White Guard", g.white, 1, 1);
         g.myBoard.getCell(1,1).setCurrent(whiteGuard);
         g.myBoard.movePiece(g.white, 1,1,1,2);
@@ -166,6 +173,12 @@ class PieceTest {
     @Test
     void testPawnAfterFirstMove() {
         Game g = new Game();
+        Piece whiteKing = new King("White King", g.white,3,0);
+        g.myBoard.getCell(3,0).setCurrent(whiteKing);
+        Piece blackKing = new King("Black King", g.black,3,7);
+        g.myBoard.getCell(3,7).setCurrent(blackKing);
+        g.myBoard.Kings = new Piece[]{whiteKing, blackKing};
+
         Piece whitePawn = new Pawn("White Pawn", g.white, 0,1);
         g.myBoard.getCell(0,1).setCurrent(whitePawn);
         g.myBoard.movePiece(g.white, 0,1,0,2);

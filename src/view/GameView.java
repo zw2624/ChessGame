@@ -15,34 +15,36 @@ import java.awt.event.ActionListener;
 public class GameView {
 
     private JFrame window;
-    private JMenuBar menuBar;
+    private MenuView menuBar;
     private BoardView board;
     private ToolView blackTool;
     private ToolView whiteTool;
+    String playerWhite;
+    String playerBlack;
     Game g;
 
     /**
      * Constructor
      */
-    public GameView(){
+    public GameView(String name1, String name2, Boolean custom){
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         } catch(Exception e) {
             //silently ignore
         }
         window = new JFrame("Static Chessboard");
-        window.setSize(800, 800);
+        window.setSize(800, 1000);
         
-        this.g = new Game();
-        g.myBoard.setup();
+        this.g = new Game(name1, name2);
+        g.myBoard.setup(custom);
         this.board = new BoardView(g);
         this.menuBar = new MenuView();
         this.blackTool = new ToolView("Toolbox for Black", g.black);
         this.whiteTool = new ToolView("Toolbox for White", g.white);
         window.add(board.getChessBoard());
         window.setJMenuBar(menuBar);
-        window.add(blackTool, BorderLayout.EAST);
-        window.add(whiteTool, BorderLayout.WEST);
+        window.add(blackTool, BorderLayout.NORTH);
+        window.add(whiteTool, BorderLayout.SOUTH);
         window.setVisible(true);
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -54,6 +56,10 @@ public class GameView {
         return board;
     }
 
+    public MenuView getMenuBar() {
+        return menuBar;
+    }
+
     public ToolView getBlackTool() {
         return blackTool;
     }
@@ -63,11 +69,15 @@ public class GameView {
     }
 
     /**
-     * main function; Assignment 1.1 display only.
+     * main function; Assignment 1.2 display only.
      * @param args
      */
     public static void main(String[] args) {
-        GameView view = new GameView();
+        String playerWhite = JOptionPane.showInputDialog("What is the name for the Light side?");
+        String playerBlack = JOptionPane.showInputDialog("What is the name for the Dark side?");
+        int cus = JOptionPane.showConfirmDialog(null, "Do you want to use custom pieces?", "Please select", JOptionPane.YES_NO_OPTION);
+        Boolean custom = cus == JOptionPane.YES_OPTION;
+        GameView view = new GameView(playerWhite, playerBlack, custom);
         Controller c = new Controller(view.g, view);
     }
 }

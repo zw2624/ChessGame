@@ -22,7 +22,7 @@ class CellTest {
         assertNull(c.getCurrent());
         c.setOwner(0);
         assertTrue(c.getOwner() == 0);
-        Player p = new Player(1, true);
+        Player p = new Player("",1, true);
         Piece whiteQueen = new Queen("White Queen", p, 0,0);
         c.setCurrent(whiteQueen);
         assertTrue(c.getOwner() == 1);
@@ -36,7 +36,7 @@ class CellTest {
         assertTrue(c.y == 1);
         assertTrue(c.getCurrent()==null);
 
-        Player p = new Player(0, true);
+        Player p = new Player("",0, true);
         Piece whiteQueen = new Queen("White Queen", p, 0,0);
         c.setCurrent(whiteQueen);
         assertTrue(c.getOwner() == whiteQueen.player.getPlayerID());

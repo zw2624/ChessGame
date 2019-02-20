@@ -7,6 +7,7 @@ import java.util.ArrayList;
  * including ID, who is first, and live Pieces
  */
 public class Player {
+    public String nickName;
     public boolean first;
     private int playerID;
     private ArrayList<Piece> livePieces;
@@ -14,21 +15,20 @@ public class Player {
     int winNum;
     int drawNum;
     int loseNum;
-    boolean canUndo;
 
     /**
      * Constructor
      * @param ID
      * @param isFirst
      */
-    public Player(int ID, boolean isFirst) {
+    public Player(String name, int ID, boolean isFirst) {
+        nickName = name;
         this.first = isFirst;
         this.playerID = ID;
         this.livePieces = new ArrayList<Piece>();
         this.winNum = 0;
         this.drawNum = 0;
         this.loseNum = 0;
-        this.canUndo = false;
     }
 
     /**
@@ -63,13 +63,6 @@ public class Player {
         this.loseNum += 1;
     }
 
-    public boolean isCanUndo() {
-        return canUndo;
-    }
-
-    public void setCanUndo(boolean canUndo) {
-        this.canUndo = canUndo;
-    }
 
     /**
      * Remove a piece of a player

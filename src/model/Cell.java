@@ -51,6 +51,11 @@ public class Cell {
      * Put Piece in the Cell
      */
     public void setCurrent(Piece current) {
+        if (current == null) {
+            Current = null;
+            Owner = 2;
+            return;
+        }
         current.x = this.x;
         current.y = this.y;
         Current = current;

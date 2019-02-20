@@ -33,6 +33,31 @@ class GameTest {
         assertEquals(g.white, g.getOpponent(g.black));
     }
 
+    @Test
+    void testGetPlayer() {
+        Game g = new Game();
+        assertEquals(g.black, g.getPlayer(1));
+        assertEquals(g.white, g.getPlayer(0));
+    }
+
+
+    @Test
+    void testRestart() {
+        Game g = new Game();
+        g.myBoard.setup(false);
+        g.myBoard.movePiece(g.white, 0,1,0,2);
+        g.restart(false);
+        assertTrue(g.myBoard.getCell(0,2).getOwner() == 2); // is empty
+    }
+
+    @Test
+    void testUndo() {
+        Game g = new Game();
+        g.myBoard.setup(false);
+        g.myBoard.movePiece(g.white, 0,1,0,2);
+        g.undo();
+        assertTrue(g.myBoard.getCell(0,2).getOwner() == 2); // is empty
+    }
 
     /**
      * Test about inCheck. Check if still incheck after we actually solved the threat.
@@ -226,8 +251,8 @@ class GameTest {
         assertNotEquals(true, g.isCheckmate(g.black, ps));
 
         System.out.println("White:");
-        boolean canMakeMoveAgain = g.myBoard.movePiece(g.white, 3,2,1,3);
-        assertFalse(canMakeMoveAgain);
+        int canMakeMoveAgain = g.myBoard.movePiece(g.white, 3,2,1,3);
+        assertFalse(canMakeMoveAgain == 1);
 
         System.out.println("Black:");
         g.myBoard.movePiece(g.black, 0,1,0,0);

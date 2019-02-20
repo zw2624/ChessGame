@@ -4,6 +4,10 @@ import javax.swing.*;
 
 public class MenuView extends JMenuBar {
 
+    public JMenu history;
+    public JMenuItem checkScore;
+    public JMenuItem getLog;
+
     /**
      * Constructor
      */
@@ -15,8 +19,14 @@ public class MenuView extends JMenuBar {
         newGame.add(vsAI);
         newGame.add(vsHU);
 
-        JMenu history = new JMenu("Check Scores");
-        JMenu suggest = new JMenu("Suggest Move");
+        this.history = new JMenu("History");
+        this.checkScore = new JMenuItem("Check Scores");
+        this.getLog = new JMenuItem("Check Log");
+        this.history.add(checkScore);
+        this.history.add(getLog);
+
+
+        JMenu suggest = new JMenu("Help");
 
         this.add(newGame);
         this.add(history);
@@ -24,4 +34,7 @@ public class MenuView extends JMenuBar {
 
     }
 
+    public JMenu getHistory() {
+        return history;
+    }
 }
