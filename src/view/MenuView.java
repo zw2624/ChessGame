@@ -13,11 +13,6 @@ public class MenuView extends JMenuBar {
      */
     public MenuView() {
         super();
-        JMenu newGame = new JMenu("New Game");
-        JMenuItem vsAI = new JMenuItem("Against Computer");
-        JMenuItem vsHU = new JMenuItem("Against Other");
-        newGame.add(vsAI);
-        newGame.add(vsHU);
 
         this.history = new JMenu("History");
         this.checkScore = new JMenuItem("Check Scores");
@@ -28,7 +23,6 @@ public class MenuView extends JMenuBar {
 
         JMenu suggest = new JMenu("Help");
 
-        this.add(newGame);
         this.add(history);
         this.add(suggest);
 

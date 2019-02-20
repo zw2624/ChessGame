@@ -258,8 +258,8 @@ public class Controller {
             int res = JOptionPane.showConfirmDialog(null, msg, "Restart Request", JOptionPane.YES_NO_OPTION);
             Boolean agree = res == JOptionPane.YES_OPTION;
             if (agree) {
-                player.addLoseNum();
-                g.getOpponent(player).addWinNum();
+                player.addDrawNum();
+                g.getOpponent(player).addDrawNum();
                 newGamePop();
             }
         }

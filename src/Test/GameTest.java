@@ -33,6 +33,9 @@ class GameTest {
         assertEquals(g.white, g.getOpponent(g.black));
     }
 
+    /**
+     * Test if we can get player with id
+     */
     @Test
     void testGetPlayer() {
         Game g = new Game();
@@ -40,7 +43,9 @@ class GameTest {
         assertEquals(g.white, g.getPlayer(0));
     }
 
-
+    /**
+     * Test if the restart recovered the piece that had been moved
+     */
     @Test
     void testRestart() {
         Game g = new Game();
@@ -50,6 +55,9 @@ class GameTest {
         assertTrue(g.myBoard.getCell(0,2).getOwner() == 2); // is empty
     }
 
+    /**
+     * Test if we can undo
+     */
     @Test
     void testUndo() {
         Game g = new Game();

@@ -36,7 +36,7 @@ public class Game {
      */
     public void restart(boolean custom) {
         this.myBoard = new Board(this);
-        int next = 0;
+        this.next = 0;
         white.first = true;
         black.first = false;
         white.removeAllPiece();
@@ -49,6 +49,7 @@ public class Game {
      * Undo the previous move
      */
     public void undo() {
+        Player cur = getPlayer(this.next);
         Player lastPlayer = getOpponent(getPlayer(this.next));
         this.next = lastPlayer.getPlayerID();
         Move lastMove = myBoard.getLastMove();
@@ -67,6 +68,7 @@ public class Game {
             }
         }
         to.setCurrent(lastMove.getEaten());
+        cur.addPiece(lastMove.getEaten());
         this.moveHistory.add(new Move(lastPlayer, null, null, null, null));
     }
 
